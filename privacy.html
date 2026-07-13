@@ -115,7 +115,7 @@
     }
 
     h1 {
-      max-width: 12ch;
+      max-width: 14ch;
       margin: 0;
       font-size: clamp(2.5rem, 8vw, 5rem);
       line-height: 0.96;
@@ -151,9 +151,41 @@
       line-height: 1.3;
     }
 
+    h3 {
+      margin: 18px 0 8px;
+      color: #fff4df;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
     p {
       margin: 0;
       color: var(--muted);
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    ul, ol {
+      margin: 10px 0 0;
+      padding-left: 1.2em;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    code {
+      font-size: 0.92em;
+      color: var(--gold-strong);
+    }
+
+    strong {
+      color: #fff4df;
+      font-weight: 650;
     }
 
     .contact {
@@ -214,58 +246,155 @@
     <main>
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: June 28, 2026</p>
+      <p class="effective-date">Effective date: July 13, 2026</p>
 
       <div class="content">
+        <section aria-labelledby="privacy-summary">
+          <h2 id="privacy-summary">Summary</h2>
+          <p>Manifestle is a <strong>local-first</strong> personal ritual app. Your private sealed intentions, private chat history with Luna, private daily check-ins, Luna evolution/customization state, reminder preferences, and widget snapshot <strong>stay on your device</strong>. We do <strong>not</strong> upload those private ritual records to our cloud for storage or multi-device sync.</p>
+          <p>Limited cloud processing happens only for: (1) optional Shared Manifest collaboration, (2) account authentication and collaboration identity (including optional username), and (3) Luna chat messages you send for AI replies through our secure backend proxy.</p>
+        </section>
+
         <section aria-labelledby="privacy-services">
-          <h2 id="privacy-services">Services used</h2>
-          <p>Manifestle may use Firebase Authentication, including anonymous authentication and optional Sign in with Apple and Google account linking or sign-in. Manifestle also uses Cloud Firestore, Firebase Cloud Messaging, Apple Push Notification service, and a server-side Luna chat backend/proxy to operate account, social, notification, and Luna chat features.</p>
+          <h2 id="privacy-services">Services we use</h2>
+          <ul>
+            <li><strong>On device:</strong> SwiftData (app group container), UserDefaults, local notifications, WidgetKit snapshot storage, Apple StoreKit.</li>
+            <li><strong>Cloud (limited):</strong> Firebase Authentication, Cloud Firestore, Firebase Cloud Messaging / Apple Push Notification service (for linked-account push registration), and Manifestle’s server-side Luna chat proxy (<code>lunaChat</code>), which calls Google Gemini with the API key kept on the server.</li>
+          </ul>
         </section>
 
-        <section aria-labelledby="privacy-data">
-          <h2 id="privacy-data">Data collected</h2>
-          <p>Manifestle may store profile data, check-ins, manifests, intentions, Luna progression and settings, friend and Shared Manifest data, device notification tokens, and Luna chat messages in Firebase or Cloud Firestore as needed to operate the app and keep your experience available across supported features.</p>
+        <section aria-labelledby="privacy-local">
+          <h2 id="privacy-local">Data stored only on your device (not uploaded as private cloud storage)</h2>
+          <p>The following remain on your iPhone (app-group / app storage) and are <strong>not</strong> written to Firestore as your private journal:</p>
+          <ul>
+            <li>Sealed intentions / private manifests</li>
+            <li>Private Luna chat history saved in the app</li>
+            <li>Private daily Luna check-ins (mood, notes, local replies)</li>
+            <li>Luna progression, prompt-usage counters, recovery flags, and customization selections</li>
+            <li>Local reminder schedule preferences</li>
+            <li>Daily Luna widget snapshot shared only between the app and its widget extension</li>
+          </ul>
+          <p>You may <strong>export</strong> a local JSON snapshot of your data from Settings; export stays under your control (share sheet / files).</p>
         </section>
 
-        <section aria-labelledby="privacy-chat">
-          <h2 id="privacy-chat">Luna chat</h2>
-          <p>Luna chat messages are sent through Manifestle’s server-side backend/proxy to Google Gemini to generate Luna responses. The Gemini API key is kept on the server, not in the app.</p>
+        <section aria-labelledby="privacy-cloud">
+          <h2 id="privacy-cloud">Data processed in the cloud</h2>
+
+          <h3>1. Authentication and collaboration identity</h3>
+          <ul>
+            <li>The app may start an <strong>anonymous</strong> Firebase Auth session so secure features (including chat) can use an app-level user ID without a launch-time login wall.</li>
+            <li>If you <strong>link</strong> Apple or Google, we process the identity tokens Apple/Google provide and may store: Firebase user ID, auth provider, whether Apple is linked, display name (if provided by the provider), and—if you choose one—an app <strong>username</strong> reserved for collaboration features.</li>
+            <li>A lightweight profile document may be stored under <code>users/{your uid}</code> for these fields (and a coarse Luna stage label used for social/collaboration context). This is <strong>not</strong> a full copy of your private manifests, private chat, or private daily check-ins.</li>
+            <li>Usernames are reserved in a dedicated username registry so they remain unique.</li>
+          </ul>
+
+          <h3>2. Optional Shared Manifest (friend collaboration)</h3>
+          <p>Only if you use Shared Manifest / friend features:</p>
+          <ul>
+            <li>Friend invite codes and friendship records</li>
+            <li>Shared journey metadata (dates, shared intention text, members)</li>
+            <li>Shared daily entries you submit (<code>completed</code> or <code>rest</code>, optional short note ≤ 200 characters)</li>
+            <li>Photo support is <strong>metadata-only</strong> today (no image bytes uploaded)</li>
+          </ul>
+          <p>Shared-manifest content is visible to the participants in that shared journey. We do not sell personal data.</p>
+
+          <h3>3. Luna chat via secure backend proxy</h3>
+          <p>When you chat with Luna, the app sends to Manifestle’s backend proxy (not a client-side Gemini key):</p>
+          <ul>
+            <li>Your latest message</li>
+            <li>The sealed intention context for that conversation</li>
+            <li>A bounded recent message history</li>
+            <li>App language preference</li>
+            <li>Authentication and App Check tokens to protect the service</li>
+          </ul>
+          <p>The proxy forwards content to <strong>Google Gemini</strong> to generate Luna’s reply. Gemini’s API key is kept on the server.</p>
+          <p>For reliability, abuse prevention, and duplicate-request handling, the backend may temporarily store chat request bookkeeping (including completed reply text and daily usage counters) associated with your auth user ID. This is <strong>not</strong> the same as cloud-backing your entire private journal; your full conversation remains saved locally on device.</p>
+
+          <h3>4. Notifications</h3>
+          <ul>
+            <li><strong>Daily check-in reminders</strong> are scheduled locally on your device.</li>
+            <li>If you link a non-anonymous account and allow remote notifications, a device push token (FCM) may be stored under your user record so we can address notifications to that device.</li>
+          </ul>
+
+          <h3>5. Purchases</h3>
+          <p>Subscriptions and in-app purchases are processed by <strong>Apple</strong> through StoreKit and the App Store. Manifestle does not receive or store your full payment-card information. Entitlements are verified on device via StoreKit.</p>
         </section>
 
-        <section aria-labelledby="privacy-notifications">
-          <h2 id="privacy-notifications">Notifications</h2>
-          <p>Manifestle may use Firebase Cloud Messaging and Apple Push Notification service to deliver notifications. Device notification tokens may be stored so notifications can be sent to the correct device.</p>
-        </section>
-
-        <section aria-labelledby="privacy-purchases">
-          <h2 id="privacy-purchases">Purchases</h2>
-          <p>Subscriptions and in-app purchases are processed by Apple through StoreKit and the App Store. Manifestle does not receive or store your full payment-card information.</p>
+        <section aria-labelledby="privacy-use">
+          <h2 id="privacy-use">How we use information</h2>
+          <ul>
+            <li>Operate the local ritual experience you see in the app</li>
+            <li>Authenticate sessions and protect the chat API (App Check + signed-in user)</li>
+            <li>Generate Luna replies when you choose to chat</li>
+            <li>Power optional friend / Shared Manifest collaboration</li>
+            <li>Enforce service integrity (rate limits / daily chat reservations)</li>
+            <li>Process account deletion when you request it</li>
+          </ul>
+          <p>We do <strong>not</strong> sell your personal data. We do <strong>not</strong> use private local ritual data for advertising networks.</p>
         </section>
 
         <section aria-labelledby="privacy-sharing">
-          <h2 id="privacy-sharing">Shared manifest visibility</h2>
-          <p>Shared-manifest content is visible to the participants in that shared manifest. We do not sell personal data.</p>
-        </section>
-
-        <section aria-labelledby="privacy-deletion">
-          <h2 id="privacy-deletion">Account and data deletion</h2>
-          <p>You may request account or data deletion by contacting us at the email below. Requests are handled according to Manifestle’s current deletion process and applicable legal requirements.</p>
+          <h2 id="privacy-sharing">Data sharing and disclosure</h2>
+          <ul>
+            <li><strong>Google Gemini</strong> (via our proxy) processes chat content you send in order to generate replies.</li>
+            <li><strong>Firebase / Google Cloud</strong> infrastructure hosts Auth, Firestore, and related services we configure for account, Shared Manifest, push tokens, and chat bookkeeping.</li>
+            <li><strong>Apple</strong> processes Sign in with Apple (if used) and StoreKit purchases.</li>
+            <li>Shared Manifest participants see content you share in that journey.</li>
+            <li>We may disclose information if required by law or to protect users and the service.</li>
+          </ul>
         </section>
 
         <section aria-labelledby="privacy-retention">
-          <h2 id="privacy-retention">Retention</h2>
-          <p>Manifestle retains data only as needed to operate the service, meet legal obligations, resolve disputes, or enforce agreements, subject to deletion requests.</p>
+          <h2 id="privacy-retention">Data retention and deletion</h2>
+          <p><strong>On device:</strong> Local data remains until you delete it in-app, delete the app, or use system storage controls.</p>
+          <p><strong>In-app deletion:</strong> Settings provides <strong>Delete Account &amp; Sign Out</strong>, which:</p>
+          <ol>
+            <li>Requests deletion of associated Manifestle <strong>cloud</strong> data (Auth user, profile, username reservation where applicable, friend/shared-manifest membership data, chat request/usage bookkeeping, push tokens) via our backend; then</li>
+            <li>Clears this device’s local Manifestle data (private manifests/chat/check-ins, Luna profile, reminders, widget snapshot) and returns you to the welcome flow.</li>
+          </ol>
+          <p>App Store purchase history is managed by Apple and is <strong>not</strong> deleted by Manifestle.</p>
+          <p>You may also contact us at the email below for assistance with deletion requests if needed.</p>
+          <p><strong>Retention:</strong> Cloud account, collaboration, and chat bookkeeping data are retained only as needed to operate the service, meet legal obligations, resolve disputes, or until deleted as above. Specific chat bookkeeping retention windows may be shortened over time as the production AI policy is finalized; account deletion removes the chat bookkeeping records associated with your uid.</p>
         </section>
 
-        <section aria-labelledby="privacy-language">
-          <h2 id="privacy-language">Language</h2>
-          <p>This policy may be made available in English and Turkish. If there is a conflict between versions, the English version controls unless a Turkish version explicitly says otherwise.</p>
+        <section aria-labelledby="privacy-choices">
+          <h2 id="privacy-choices">Your choices and controls</h2>
+          <ul>
+            <li>Use Manifestle without linking Apple/Google (guest/anonymous session) for the core local ritual</li>
+            <li>Link an account only when you want collaboration features</li>
+            <li>Choose a username only when required for friend/shared-manifest flows</li>
+            <li>Use or avoid Shared Manifest and Luna chat</li>
+            <li>Export a local data snapshot</li>
+            <li>Delete account &amp; clear this device in Settings</li>
+            <li>Manage or cancel subscriptions in Apple account settings</li>
+            <li>Control notification permission in iOS Settings</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="privacy-children">
+          <h2 id="privacy-children">Children</h2>
+          <p>Manifestle is not directed to children under 13 (or the minimum age required in your region). Do not use the app if you are under that age.</p>
+        </section>
+
+        <section aria-labelledby="privacy-transfers">
+          <h2 id="privacy-transfers">International transfers</h2>
+          <p>Cloud services we use may process data in regions where the provider operates (including outside your country). Transfers are handled under those providers’ terms and applicable law.</p>
+        </section>
+
+        <section aria-labelledby="privacy-advice">
+          <h2 id="privacy-advice">Health and professional advice</h2>
+          <p>Manifestle is a personal reflection companion, <strong>not</strong> emergency, medical, legal, financial, or mental-health care. If you may be in immediate danger, contact local emergency services.</p>
+        </section>
+
+        <section aria-labelledby="privacy-changes">
+          <h2 id="privacy-changes">Changes to this policy</h2>
+          <p>We may update this policy as the product changes. The effective date above will be revised when material changes are published. Continued use after updates means you acknowledge the revised policy.</p>
         </section>
 
         <section aria-labelledby="privacy-contact">
           <h2 id="privacy-contact">Contact</h2>
           <div class="contact">
-            <p>Contact: mirachakankaragoz@gmail.com</p>
+            <p>Contact: <a href="mailto:mirachakankaragoz@gmail.com">mirachakankaragoz@gmail.com</a></p>
           </div>
         </section>
       </div>
