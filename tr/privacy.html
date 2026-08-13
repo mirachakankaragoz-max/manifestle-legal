@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifestle — Gizlilik Politikası</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 46rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #241a14; background: #f8f2ea;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .updated { color: #6b5a4c; font-size: .9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #d8c7b2; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #f0e5d6; }
+  a { color: #8c6112; }
+  .callout { border-left: 3px solid #b8902f; background: #f3e9d9; padding: .75rem 1rem; margin: 1.25rem 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f2e9e1; background: #17110f; }
+    th { background: #2a211d; }
+    th, td { border-color: #4a3b32; }
+    a { color: #e8c473; }
+    .updated { color: #b6a293; }
+    .callout { background: #221a16; border-left-color: #e8c473; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Manifestle Gizlilik Politikası</h1>
+<p class="updated">Son güncelleme: 13 Ağustos 2026</p>
+
+<p>Manifestle özel bir ritüel uygulamasıdır: niyetlerini mühürler, Luna ile konuşur ve günlük
+check-in'lerini kaydedersin. Bu politika, hangi verinin cihazında kaldığını, neyin ne zaman ve
+neden başka bir yere gönderildiğini anlatır. Bu politika ile uygulamanın davranışı çelişiyorsa
+bunu bir hata olarak kabul et ve
+<a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> adresinden bize bildir.</p>
+
+<p>Manifestle, TortuBuild ("biz") tarafından işletilmektedir.</p>
+
+<h2>1. Kısa özet</h2>
+<ul>
+  <li><strong>Hesap olmadan</strong> manifestlerin, sohbet geçmişin ve günlük check-in'lerin
+      yalnızca cihazında saklanır.</li>
+  <li><strong>Luna'nın cevaplarını yapay zekâ yazar.</strong> Bunun için uygulama içinde açık
+      iznin gerekir. Sen izin verene kadar yazdıklarından hiçbiri gönderilmez.</li>
+  <li><strong>Apple veya Google hesabı bağlarsan</strong> manifestlerin (Luna ile
+      konuşmaları dahil), günlük check-in'lerin ve Luna profil ayarların, yeni ya da yeniden
+      kurulan bir cihazda geri gelebilsin diye bulutumuzda saklanır.</li>
+  <li>Reklam veya analitik SDK'ları kullanmıyoruz ve seni uygulamalar ile siteler arasında
+      izlemiyoruz.</li>
+  <li>Hesabını ve onunla saklanan her şeyi uygulama içinden silebilirsin.</li>
+</ul>
+
+<h2>2. Yalnızca cihazında saklanan veriler</h2>
+<p>Bir hesap bağlamadan önce ve misafir ("gezgin") olarak kaldığın sürece şunlar cihazından
+çıkmaz:</p>
+<ul>
+  <li>Mühürlediğin manifestler ve metinleri.</li>
+  <li>Luna ile konuşmaların.</li>
+  <li>Günlük check-in'lerin, ruh hâllerin ve notların.</li>
+  <li>Luna ilerlemen, görünüm seçimlerin, hatırlatıcı saatin, görünüm ve dil tercihlerin.</li>
+</ul>
+<p>Uygulamayı silmek bu yerel veriyi de siler. Ancak bağlı bir hesabın bulutdaki kopyası
+uygulamayı silmekle <em>silinmez</em> — 8. bölüme bak.</p>
+
+<h2>3. Luna'nın yapay zekâ cevapları</h2>
+<p>Luna'nın cevaplarını <strong>Google Gemini</strong> yazar. Manifestle, Luna ilk kez cevap
+verecekken senden açıkça izin ister ve sen izin vermeden hiçbir şey göndermez. İznini istediğin
+zaman <em>Ayarlar → Luna'nın Yapay Zekâ Cevapları</em> bölümünden geri alabilirsin; uygulama
+göndermeyi anında durdurur.</p>
+
+<p>İzin verdiğinde her cevap için şunlar kendi sunucumuza, oradan da Google Gemini API'sine
+iletilir:</p>
+<ul>
+  <li>Az önce yazdığın mesaj.</li>
+  <li>Luna'nın o konuşmada senin için sakladığı niyetin metni.</li>
+  <li>O konuşmanın en fazla son 10 mesajı.</li>
+  <li>Uygulama dilin ve seçtiğin Luna karakteri.</li>
+</ul>
+<p>Adın, e-posta adresin ve hesap kimliğin Google'a gönderilenlerin içinde <strong>yer almaz</strong>.
+İstekler, kötüye kullanım sınırlarını uygulayabilmemiz için kimlik doğrulamalıdır; ancak bu kimlik
+yalnızca kendi sunucumuzda kullanılır ve isteme dahil edilerek iletilmez.</p>
+
+<div class="callout">
+<strong>Eğitim ve saklama.</strong> Google Gemini API'sini ücretli bir hizmet katmanında
+kullanıyoruz; Google bu katmanda gönderilen istemleri ve yanıtları modellerini eğitmek için
+kullanmadığını belirtir. Google, istek verilerini kendi koşullarına göre işler ve saklar; bkz.
+<a href="https://ai.google.dev/gemini-api/terms">Gemini API Ek Hizmet Koşulları</a> ve
+<a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>. Kendi
+sunucularımızda, tekrarlanan bir isteğin iki kez ücretlendirilmemesi ya da iki kez
+yanıtlanmaması için Luna'nın cevap metni kısa süre saklanır; bu kayıtlar 30 gün sonra otomatik
+olarak, hesabını sildiğinde ise anında silinir.
+</div>
+
+<p>Luna bir terapist, doktor ya da acil yardım hattı değildir. Bir mesaj yakın bir zarar riski
+taşıyorsa uygulama, arkadaşça bir cevap yerine kriz destek kaynaklarını gösterir.</p>
+
+<h2>4. Hesap bağladığında bulutta saklanan veriler</h2>
+<p>Apple ile Giriş Yap veya Google ile bağlanmak isteğe bağlıdır. Yalnızca Ortak Manifest (sosyal
+özellik) ve yolculuğunu başka bir cihaza geri yükleme için gereklidir. Bir hesap bağladığında
+hesap kimliğin altında şunları saklarız:</p>
+
+<table>
+  <tr><th>Ne</th><th>Neden</th></tr>
+  <tr><td>Manifestlerin ve Luna ile tüm konuşmaları</td><td>Yeni ya da yeniden kurulan bir cihazda yolculuğunu geri getirmek</td></tr>
+  <tr><td>Günlük check-in'lerin (tarih, ruh hâli, not, Luna'nın cevabı)</td><td>Serini ve Luna'nın ilerlemesini geri getirmek</td></tr>
+  <tr><td>Luna profili: evre, bağ, kilometre taşları, görünüm, hatırlatıcı saati, görünüm ve dil tercihleri</td><td>Luna'yı cihazlar arasında aynı tutmak</td></tr>
+  <tr><td>Kullanıcı adı, seçtiğin avatar, seçtiğin Luna karakteri</td><td>Ortak Manifest için kimlik</td></tr>
+  <tr><td>Bildirim jetonu</td><td>Ortak Manifest ve hatırlatıcı bildirimlerini iletmek</td></tr>
+  <tr><td>Ortak Manifest içeriği: paylaşılan yolculuklar, tarih aralıkları, oradaki günlük girişlerin ve notların</td><td>Paylaştığın arkadaşına ortak yolculuğu göstermek</td></tr>
+</table>
+
+<p>Abonelik hakkın cihazında Apple'ın StoreKit'i tarafından belirlenir. Ödeme bilgilerini almayız
+ve saklamayız.</p>
+
+<p>Uygulama, hesabı bağladığın ekranda, bağlamadan önce bunların tamamını sana anlatır.</p>
+
+<h2>5. Ortak Manifest ve diğer insanlar</h2>
+<p>Ortak Manifest, bir yolculuğu bir arkadaşınla paylaşmanı sağlar. Orada paylaştığın her şey —
+yolculuk başlığın, günlük girişlerin ve notların — paylaştığın kişiye görünür. Ortak bir
+yolculuğa, o kişinin okumasını istemeyeceğin hiçbir şeyi yazma.</p>
+<p>Her ortak yolculukta, saldırgan ya da başka şekilde uygunsuz içerik için arkadaşlıktan
+çıkarmanın yanında bir <strong>Bildir</strong> seçeneği bulunur. Bildirimler
+<a href="mailto:support@tortubuild.com">support@tortubuild.com</a> adresine ulaşır; içeriği
+kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
+
+<h2>6. Yapmadıklarımız</h2>
+<ul>
+  <li>Reklam SDK'sı yok, analitik SDK'sı yok, üçüncü taraf izleyici yok. Uygulama seni izlemediği
+      için App Tracking Transparency çerçevesini kullanmaz.</li>
+  <li>Kişisel verileri satmayız veya kiralamayız.</li>
+  <li>Günlük içeriğini reklam ya da profilleme için kullanmayız.</li>
+</ul>
+
+<h2>7. Hizmet sağlayıcılar</h2>
+<ul>
+  <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Functions, Cloud
+      Messaging, App Check) — hesap girişi, 4. bölümdeki verilerin bulutta saklanması, bildirimler
+      ve kötüye kullanım önleme.</li>
+  <li><strong>Google Gemini API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının
+      üretilmesi.</li>
+  <li><strong>Apple</strong> — Apple ile Giriş Yap, bildirim iletimi ve App Store satın
+      alımları.</li>
+</ul>
+
+<h2>8. Verilerini silmek</h2>
+<p><em>Ayarlar → Verilerin → Manifestle Hesabını Sil</em>, hesabını ve onunla saklanan verileri
+siler: buluttaki manifestlerin ve konuşmaların, günlük check-in'lerin, Luna profil durumun,
+kullanıcı adı kaydın, avatarın, karakterin, arkadaş davetlerin ve arkadaşlıkların, ortak
+yolculuklardaki girişlerin, bildirim jetonların ve Luna sohbet kayıtların. Ayrıca o cihazdaki
+yerel uygulama verisini temizler ve oturumunu kapatır.</p>
+<p>Yalnızca uygulamayı silmek buluttaki kopyayı silmez, çünkü oturumun cihazda kalmaya devam
+eder. Manifestle Hesabını Sil'i kullan ya da
+<a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> adresine yaz, senin için
+silelim.</p>
+<p>Manifestlerini ve yansımalarını istediğin zaman
+<em>Ayarlar → Verilerin → Verilerimi Dışa Aktar</em> ile dışa aktarabilirsin.</p>
+
+<h2>9. Çocuklar</h2>
+<p>Manifestle 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek kişisel veri
+toplamayız. Bir çocuğun bize veri verdiğini düşünüyorsan bize ulaş, veriyi silelim.</p>
+
+<h2>10. Haklarınız</h2>
+<p>Yaşadığın yere bağlı olarak kişisel verilerine erişme, düzeltme, dışa aktarma veya silme ve
+belirli işlemelere itiraz etme ya da bunları kısıtlama haklarına sahip olabilirsin. Uygulama
+içindeki dışa aktarma ve silme seçenekleri bunların çoğunu doğrudan karşılar. Diğer her şey için
+<a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> adresine yaz.</p>
+
+<h2>11. Değişiklikler</h2>
+<p>Manifestle'ın verini nasıl işlediğini değiştirirsek bu sayfayı ve tarihini güncelleriz.
+Cihazından neyin çıktığına dair önemli değişiklikler ayrıca uygulama içinde de bildirilir.</p>
+
+<h2>12. İletişim</h2>
+<p>Gizlilik: <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a><br>
+Destek: <a href="mailto:support@tortubuild.com">support@tortubuild.com</a></p>
+
+<p><a href="/privacy.html">English</a></p>
+
+</body>
+</html>

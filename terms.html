@@ -1,267 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manifestle Terms of Use</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #100d0a;
-      --bg-soft: #17120d;
-      --panel: rgba(31, 24, 17, 0.82);
-      --panel-strong: rgba(42, 32, 22, 0.92);
-      --text: #f8efe2;
-      --muted: #d8c9b3;
-      --soft: #a99678;
-      --gold: #d9ad62;
-      --gold-strong: #f0ca7c;
-      --border: rgba(217, 173, 98, 0.24);
-      --border-soft: rgba(248, 239, 226, 0.12);
-      --shadow: rgba(0, 0, 0, 0.36);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      background: var(--bg);
-    }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(217, 173, 98, 0.14), transparent 34rem),
-        linear-gradient(180deg, #14100c 0%, var(--bg) 48%, #0c0a08 100%);
-      font-size: 17px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--gold-strong);
-      text-decoration-color: rgba(240, 202, 124, 0.48);
-      text-underline-offset: 0.18em;
-    }
-
-    a:hover {
-      color: #ffe0a3;
-    }
-
-    a:focus-visible {
-      outline: 3px solid rgba(240, 202, 124, 0.78);
-      outline-offset: 4px;
-      border-radius: 8px;
-    }
-
-    .page {
-      width: min(100%, 920px);
-      margin: 0 auto;
-      padding: 28px 20px 56px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 12px 0 40px;
-    }
-
-    .brand {
-      color: var(--gold-strong);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--soft);
-      font-size: 0.94rem;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    nav a[aria-current="page"] {
-      color: var(--gold-strong);
-    }
-
-    main {
-      padding: clamp(28px, 5vw, 54px);
-      background: linear-gradient(145deg, var(--panel), rgba(20, 16, 12, 0.88));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: 0 24px 70px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 12ch;
-      margin: 0;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      line-height: 0.96;
-      letter-spacing: -0.03em;
-    }
-
-    .effective-date {
-      display: inline-flex;
-      margin: 26px 0 0;
-      padding: 8px 13px;
-      color: var(--gold-strong);
-      background: rgba(217, 173, 98, 0.1);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.95rem;
-      line-height: 1.35;
-    }
-
-    .content {
-      max-width: 68ch;
-      margin-top: 42px;
-    }
-
-    section {
-      padding: 26px 0;
-      border-top: 1px solid var(--border-soft);
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      color: #fff4df;
-      font-size: 1.08rem;
-      line-height: 1.3;
-    }
-
-    p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    p + p {
-      margin-top: 12px;
-    }
-
-    strong {
-      color: #fff4df;
-      font-weight: 650;
-    }
-
-    .contact {
-      margin-top: 10px;
-      padding: 22px;
-      background: var(--panel-strong);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-    }
-
-    footer {
-      padding: 24px 4px 0;
-      color: var(--soft);
-      font-size: 0.92rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        font-size: 16px;
-      }
-
-      .page {
-        padding: 20px 14px 36px;
-      }
-
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-bottom: 28px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-      }
-
-      main {
-        border-radius: 22px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifestle — Terms of Use</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 46rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #241a14; background: #f8f2ea;
+  }
+  h1 { font-size: 1.75rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .updated { color: #6b5a4c; font-size: .9rem; margin-top: 0; }
+  a { color: #8c6112; }
+  .callout { border-left: 3px solid #b8902f; background: #f3e9d9; padding: .75rem 1rem; margin: 1.25rem 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #f2e9e1; background: #17110f; }
+    a { color: #e8c473; }
+    .updated { color: #b6a293; }
+    .callout { background: #221a16; border-left-color: #e8c473; }
+  }
+</style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">Manifestle</div>
-      <nav aria-label="Legal pages">
-        <a href="privacy.html">Privacy Policy</a>
-        <span aria-hidden="true">/</span>
-        <a href="terms.html" aria-current="page">Terms of Use</a>
-      </nav>
-    </header>
 
-    <main>
-      <p class="eyebrow">Legal</p>
-      <h1>Terms of Use</h1>
-      <p class="effective-date">Effective date: July 13, 2026</p>
+<h1>Manifestle Terms of Use</h1>
+<p class="updated">Last updated: 13 August 2026</p>
 
-      <div class="content">
-        <section aria-labelledby="terms-use">
-          <h2 id="terms-use">Use of Manifestle</h2>
-          <p>Manifestle is a personal reflection and companion app. Do not use it for emergency, medical, legal, financial, or mental-health crisis advice.</p>
-        </section>
+<p>These terms are an agreement between you and TortuBuild ("we", "us") covering your use of the
+Manifestle iOS app. By using Manifestle you accept them. If you do not accept them, do not use
+the app.</p>
 
-        <section aria-labelledby="terms-content">
-          <h2 id="terms-content">Shared content</h2>
-          <p>You are responsible for content you create and share. Do not use shared features to harass, abuse, impersonate, or violate another person’s privacy.</p>
-        </section>
+<h2>1. Who may use Manifestle</h2>
+<p>You must be at least 13 years old. If you are under the age of majority where you live, you may
+use Manifestle only with the involvement of a parent or guardian.</p>
 
-        <section aria-labelledby="terms-access">
-          <h2 id="terms-access">Access</h2>
-          <p>We may suspend access for misuse, security reasons, or to protect users and the service.</p>
-        </section>
+<h2>2. Your content</h2>
+<p>Your manifests, check-ins, notes, and messages are yours. We claim no ownership of them. You
+grant us only the limited permission needed to operate the app for you: storing your content,
+restoring it to your devices when you link an account, showing shared journeys to the member you
+chose, and sending the content described in the Privacy Policy to our AI provider so Luna can
+reply.</p>
 
-        <section aria-labelledby="terms-purchases">
-          <h2 id="terms-purchases">Subscriptions and purchases</h2>
-          <p>Paid subscriptions and in-app purchases are billed by Apple through the App Store. Subscriptions may auto-renew where applicable and can be managed or cancelled through your Apple account settings.</p>
-        </section>
+<h2>3. Luna and AI-generated replies</h2>
+<p>Luna's replies are generated by an AI model and require your explicit in-app permission before
+anything is sent. AI output can be wrong, incomplete, or inappropriate. Do not rely on it as
+professional advice.</p>
 
-        <section aria-labelledby="terms-deletion">
-          <h2 id="terms-deletion">Account termination and deletion</h2>
-          <p>You may delete your Manifestle account and associated Manifestle cloud data, and clear this device’s local Manifestle data, using the in-app <strong>Delete Account &amp; Sign Out</strong> control in Settings. You may also contact us at the email below for assistance. App Store purchase history is managed by Apple and is not deleted by Manifestle. Manifestle may suspend or terminate access for misuse, security reasons, or service protection.</p>
-        </section>
+<div class="callout">
+<strong>Manifestle is not medical, psychological, legal, or financial advice, and it is not an
+emergency service.</strong> If you may be in immediate danger, contact your local emergency
+services or a crisis line right away.
+</div>
 
-        <section aria-labelledby="terms-language">
-          <h2 id="terms-language">Language</h2>
-          <p>These terms may be made available in English and Turkish. If there is a conflict between versions, the English version controls unless a Turkish version explicitly says otherwise.</p>
-        </section>
+<h2>4. Community rules for shared content</h2>
+<p>Shared Manifest lets you share a journey with another member. When you post content there, you
+agree not to post content that is:</p>
+<ul>
+  <li>abusive, harassing, threatening, or hateful;</li>
+  <li>sexual content involving minors, or any sexual content directed at someone without their
+      consent;</li>
+  <li>content that encourages self-harm, suicide, disordered eating, or violence;</li>
+  <li>illegal, infringing, or someone else's private information; or</li>
+  <li>spam, scams, or impersonation.</li>
+</ul>
+<p>There is no tolerance for objectionable content or abusive users. Every shared journey has a
+<strong>Report</strong> control, and you can remove a friend at any time. We review reports and
+may remove content, end a shared journey, suspend, or permanently terminate accounts. You can
+also reach us at <a href="mailto:support@tortubuild.com">support@tortubuild.com</a>.</p>
 
-        <section aria-labelledby="terms-contact">
-          <h2 id="terms-contact">Contact</h2>
-          <div class="contact">
-            <p>Contact: <a href="mailto:support@tortubuild.com">support@tortubuild.com</a></p>
-          </div>
-        </section>
-      </div>
-    </main>
+<h2>5. Manifestle Plus subscriptions</h2>
+<p>Manifestle Plus is an auto-renewing subscription offered as a monthly or yearly plan. Prices
+are shown in the app in your local currency before purchase.</p>
+<ul>
+  <li>Payment is charged to your Apple Account at confirmation of purchase.</li>
+  <li>The subscription renews automatically unless you turn off auto-renew at least 24 hours
+      before the end of the current period.</li>
+  <li>Your Apple Account is charged for renewal within 24 hours before the end of the current
+      period.</li>
+  <li>You can manage or cancel your subscription in your Apple Account settings.</li>
+  <li>Permanent items purchased in the app remain yours if your subscription ends.</li>
+</ul>
+<p>Refunds are handled by Apple under the App Store terms, not by us.</p>
 
-    <footer>Manifestle</footer>
-  </div>
+<h2>6. Acceptable use of the app</h2>
+<p>Do not attempt to break, overload, reverse engineer, or circumvent the app's limits or security
+(including its usage quotas and abuse protections), and do not use it to build a competing
+dataset or service.</p>
+
+<h2>7. Ending your use</h2>
+<p>You can stop at any time by deleting the app, and you can delete your account and its stored
+data from <em>Settings → Your Data → Delete Manifestle Account</em>. We may suspend or terminate
+access if these terms are broken, particularly section 4.</p>
+
+<h2>8. Availability and changes</h2>
+<p>We may change, suspend, or discontinue features. We will not remove your ability to export
+your own data without notice.</p>
+
+<h2>9. Disclaimer and liability</h2>
+<p>Manifestle is provided "as is", without warranties of any kind to the fullest extent permitted
+by law. To the extent permitted by law, our total liability arising out of your use of Manifestle
+is limited to the amount you paid us for it in the 12 months before the claim. Nothing in these
+terms limits liability that cannot be limited by law, including for death or personal injury
+caused by negligence, or for fraud.</p>
+
+<h2>10. Apple</h2>
+<p>Apple is not a party to these terms and is not responsible for Manifestle or its content.
+Apple has no obligation to provide support for Manifestle. Apple and its subsidiaries are
+third-party beneficiaries of these terms and may enforce them against you. Apple's standard
+Licensed Application End User License Agreement also applies to your use of the app; where it
+conflicts with these terms, the more protective term for you applies.</p>
+
+<h2>11. Governing law</h2>
+<p>These terms are governed by the laws of the Republic of Türkiye, without regard to conflict of
+law rules. Mandatory consumer protections available to you where you live are unaffected.</p>
+
+<h2>12. Contact</h2>
+<p>Support: <a href="mailto:support@tortubuild.com">support@tortubuild.com</a><br>
+Privacy: <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a></p>
+
+<p><a href="/tr/terms.html">Türkçe</a></p>
+
 </body>
 </html>
