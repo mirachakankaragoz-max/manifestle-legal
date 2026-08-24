@@ -32,7 +32,7 @@
 <body>
 
 <h1>Manifestle Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 23 Ağustos 2026</p>
+<p class="updated">Son güncelleme: 24 Ağustos 2026</p>
 
 <p>Manifestle özel bir ritüel uygulamasıdır: niyetlerini mühürler, Luna ile konuşur, günlük
 check-in'lerini kaydeder ve bir rüya günlüğü tutarsın. Bu politika, hangi verinin cihazında
@@ -75,6 +75,18 @@ uygulamanın davranışı çelişiyorsa bunu bir hata olarak kabul et ve
 </ul>
 <p>Uygulamayı silmek bu yerel veriyi de siler. Ancak bağlı bir hesabın bulutdaki kopyası
 uygulamayı silmekle <em>silinmez</em> — 8. bölüme bak.</p>
+<p><strong>Telefonunun kendi yedeği.</strong> "Cihazından çıkmaz" ifadesi, Manifestle'ın bunu
+göndermediği anlamına gelir. Telefonunun işletim sistemi yine de yedekleyebilir: Android'de
+Google'ın yedekleme hizmeti, bir uygulamanın cihazdaki verisini — yukarıda sayılanlar dahil —
+Google hesabına kopyalayabilir ve yeni bir telefon kurduğunda ya da uygulamayı yeniden
+yüklediğinde geri getirebilir. iOS'un iCloud'a veya bilgisayara aldığı yedekler de aynı şekilde
+çalışır. Bu yedekler işletim sistemi tarafından alınır, senin Apple ya da Google hesabında
+tutulur ve bu politikaya değil Apple'ın veya Google'ın koşullarına tabidir; biz onları okuyamayız
+ve bize bir kopyası gönderilmez.</p>
+<p>Yedeklemeyi açık bırakıyoruz, çünkü bir misafir için bir yolculuğun kaybolan ya da değişen bir
+telefondan sağ çıkmasının tek yolu budur — geri yüklenecek bir bulut kopyası yoktur. Böyle
+olmasını istemiyorsan Manifestle için <em>Android Ayarlar → Google → Yedekleme</em> ya da
+<em>iOS Ayarlar → [adın] → iCloud</em> bölümünden kapatabilirsin.</p>
 
 <h2>3. Luna'nın yapay zekâ cevapları</h2>
 <p>Luna'nın cevaplarını <strong>Google Gemini</strong> yazar. Manifestle, Luna ilk kez cevap
@@ -151,7 +163,8 @@ kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
 <h2>6. Yapmadıklarımız</h2>
 <ul>
   <li>Reklam SDK'sı yok, analitik SDK'sı yok, üçüncü taraf izleyici yok. Uygulama seni izlemediği
-      için App Tracking Transparency çerçevesini kullanmaz.</li>
+      için App Tracking Transparency çerçevesini kullanmaz. Android uygulaması çökme tanılaması
+      gönderir (7. bölüm) — bir çökme raporu analitik değildir ve yazdığın hiçbir şeyi taşımaz.</li>
   <li>Kişisel verileri satmayız veya kiralamayız.</li>
   <li>Günlük içeriğini reklam ya da profilleme için kullanmayız.</li>
 </ul>
@@ -161,10 +174,20 @@ kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
   <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Functions, Cloud
       Messaging, App Check) — hesap girişi, 4. bölümdeki verilerin bulutta saklanması, bildirimler
       ve kötüye kullanım önleme.</li>
+  <li><strong>Firebase Crashlytics</strong> — <em>yalnızca Android</em>. Uygulama çöktüğünde ya da
+      toparlayabildiği bir hataya düştüğünde bir tanılama raporu gönderir: kodun neresinde
+      olduğu, uygulama sürümü ve derlemenin hata ayıklama mı yayın mı olduğu, cihaz modeli ve
+      Android sürümü, bir de Crashlytics'in o kurulum için ürettiği bir tanımlayıcı.
+      Manifestlerini, mesajlarını, check-in'lerini, rüyalarını, doğum tarihini, adını, e-postanı
+      ya da hesap kimliğini göndermez. iOS uygulamasında hiç çökme raporlaması yoktur.</li>
   <li><strong>Google Gemini API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının
       üretilmesi.</li>
   <li><strong>Apple</strong> — Apple ile Giriş Yap, bildirim iletimi ve App Store satın
       alımları.</li>
+  <li><strong>Google Play</strong> — <em>yalnızca Android</em>. Uygulamanın dağıtımı ve Manifestle
+      Plus satın alımlarının işlenmesi. Google Play uygulamaya yalnızca bir aboneliğin o an etkin
+      olup olmadığını bildirir; ödeme bilgilerin Google tarafından işlenir ve bize hiç ulaşmaz.
+      Google ile Giriş Yap, yukarıdaki Firebase Authentication üzerinden yürütülür.</li>
 </ul>
 
 <h2>8. Verilerini silmek</h2>

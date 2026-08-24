@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 23 August 2026</p>
+<p class="updated">Last updated: 24 August 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, and keep a dream journal. This policy describes exactly what stays on your device,
@@ -77,6 +77,17 @@ never leaves your device:</p>
 </ul>
 <p>Deleting the app deletes this local data. Note that a linked account's copy in our cloud is
 <em>not</em> deleted by removing the app — see section 8.</p>
+<p><strong>Your phone's own backup.</strong> "Never leaves your device" means Manifestle does not
+send it. Your phone's operating system may still back it up: on Android, Google's backup service can
+copy an app's on-device data — including everything listed above — to your Google account and put it
+back when you set up a new phone or reinstall. iOS backups to iCloud or a computer work the same
+way. These backups are made by the operating system, held under your Apple or Google account, and
+governed by Apple's or Google's terms rather than by this policy; we cannot read them and we are not
+sent a copy.</p>
+<p>We leave backup enabled because for a guest it is the only way a journey survives a lost or
+replaced phone — there is no cloud copy to restore from. If you would rather it did not happen, turn
+it off for Manifestle in <em>Android Settings → Google → Backup</em>, or in
+<em>iOS Settings → [your name] → iCloud</em>.</p>
 
 <h2>3. Luna's AI replies</h2>
 <p>Luna's replies are written by <strong>Google Gemini</strong>. Manifestle asks for your explicit
@@ -153,7 +164,9 @@ removing content and terminating accounts.</p>
 <h2>6. What we do not do</h2>
 <ul>
   <li>No advertising SDKs, no analytics SDKs, no third-party trackers. The app does not use the
-      App Tracking Transparency framework because it does not track you.</li>
+      App Tracking Transparency framework because it does not track you. The Android app does send
+      crash diagnostics (section 7) — a crash report is not analytics, and it carries nothing you
+      wrote.</li>
   <li>We do not sell or rent personal data.</li>
   <li>We do not use your journal content for advertising or profiling.</li>
 </ul>
@@ -163,9 +176,19 @@ removing content and terminating accounts.</p>
   <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Functions, Cloud
       Messaging, App Check) — account sign-in, cloud storage of the data listed in section 4,
       notifications, and abuse prevention.</li>
+  <li><strong>Firebase Crashlytics</strong> — <em>Android only</em>. When the app crashes or hits an
+      error it can recover from, it sends a diagnostic report: where in the code it happened, the app
+      version and whether it was a debug or release build, the device model and Android version, and
+      an identifier Crashlytics generates for the installation. It does not send your manifests,
+      messages, check-ins, dreams, birth date, name, email, or account id. The iOS app has no crash
+      reporting at all.</li>
   <li><strong>Google Gemini API</strong> — generating Luna's replies, as described in section 3.</li>
   <li><strong>Apple</strong> — Sign in with Apple, push notification delivery, and App Store
       purchases.</li>
+  <li><strong>Google Play</strong> — <em>Android only</em>. Distribution of the app and processing of
+      Manifestle Plus purchases. Google Play tells the app whether a subscription is currently
+      active; your payment details are handled by Google and never reach us. Sign in with Google is
+      handled by Firebase Authentication, above.</li>
 </ul>
 
 <h2>8. Deleting your data</h2>
