@@ -34,12 +34,13 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 24 August 2026</p>
+<p class="updated">Last updated: 27 August 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
-check-ins, and keep a dream journal. This policy describes exactly what stays on your device,
-what is sent elsewhere, when, and why. Where this policy and the app disagree, treat it as a bug
-and tell us at <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a>.</p>
+check-ins, keep a dream journal, and open a fortune cookie. This policy describes exactly what
+stays on your device, what is sent elsewhere, when, and why. Where this policy and the app
+disagree, treat it as a bug and tell us at
+<a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a>.</p>
 
 <p>Manifestle is operated by TortuBuild ("we", "us").</p>
 
@@ -55,6 +56,9 @@ and tell us at <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a
   <li><strong>The Dream Journal needs an account.</strong> Writing and saving a dream sends it
       nowhere; a dream is only ever sent to be interpreted when you ask Luna to read that
       particular one.</li>
+  <li><strong>The fortune cookie needs an account too, and sends nothing you have written.</strong>
+      Breaking one asks Luna for a line; the request carries the date, your app language, and which
+      of the day's cookies it is, and nothing else.</li>
   <li>We do not use advertising or analytics SDKs, and we do not track you across apps or
       websites.</li>
   <li>You can delete your account and everything stored with it from inside the app.</li>
@@ -69,11 +73,11 @@ never leaves your device:</p>
   <li>Your daily check-ins, moods, and notes.</li>
   <li>Your Luna companion progress, appearance choices, reminder time, appearance and language
       preferences.</li>
-  <li>The birth date and zodiac sign you choose when you first open the app, and the crystal ball
-      readings Luna gives you that day.</li>
+  <li>The birth date and zodiac sign you choose when you first open the app, the crystal ball
+      readings Luna gives you that day, and the fortunes she writes in that day's cookies.</li>
   <li>How much of today's free allowance you have used — the messages Luna has answered, the
-      crystal ball readings she has given, and the dreams she has read. This is counted per
-      device, never uploaded, and it resets each day.</li>
+      crystal ball readings she has given, the dreams she has read, and the fortune cookies you
+      have opened. This is counted per device, never uploaded, and it resets each day.</li>
 </ul>
 <p>Deleting the app deletes this local data. Note that a linked account's copy in our cloud is
 <em>not</em> deleted by removing the app — see section 8.</p>
@@ -112,6 +116,12 @@ permission, and only when you ask her to read a specific dream. Writing a dream 
 sends it nowhere. When you do ask her to read one, we send the text of that single dream, the
 calendar date it was written on, your app language, and the Luna persona you chose. No other
 dream, and no manifest, message, or check-in, is included.</p>
+<p>Luna's <strong>fortune cookies</strong> are written the same way, under the same permission.
+Breaking one sends the least of anything in this section: the calendar date the fortune is for,
+your app language, which of the day's cookies you are opening, and the Luna persona you chose.
+Nothing you have written is included — no manifest, message, check-in, or dream — and unlike a
+crystal ball reading, not even your zodiac sign. The fortune Luna writes back is kept on your
+device for the rest of that day and is never uploaded.</p>
 <p>Your name, email address, and account identity are <strong>not</strong> included in what we send
 to Google. Requests are authenticated so we can enforce abuse limits, but the authenticated
 identifier is used by our server only and is not forwarded as part of the prompt.</p>
@@ -122,9 +132,9 @@ under which Google states that it does not use submitted prompts or responses to
 models. Google processes and retains request data according to its own terms; see the
 <a href="https://ai.google.dev/gemini-api/terms">Gemini API Additional Terms of Service</a> and the
 <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. On our own servers, the
-text of a Luna reply, reading, or dream interpretation is stored briefly so that a retried
-request cannot be charged or answered twice; these records are automatically deleted after 30
-days, and immediately when you delete your account.
+text of a Luna reply, reading, dream interpretation, or fortune is stored briefly so that a
+retried request cannot be charged or answered twice; these records are automatically deleted after
+30 days, and immediately when you delete your account.
 </div>
 
 <p>Luna is a companion, not a therapist, doctor, or emergency service. If a message suggests
@@ -146,6 +156,10 @@ account, we store the following under your account identifier:</p>
   <tr><td>Notification token</td><td>Deliver Shared Manifest and reminder notifications</td></tr>
   <tr><td>Shared Manifest content: shared journeys, their date ranges, and your daily entries and notes in them</td><td>Show the shared journey to the friend you share it with</td></tr>
 </table>
+
+<p>Your fortune cookies are deliberately <em>not</em> in this table. A fortune is a moment on one
+device on one day rather than part of your journey, so it stays on the device that opened it and is
+never uploaded — which also means it does not come back when you sign in somewhere else.</p>
 
 <p>Your subscription entitlement is determined on your device by Apple's StoreKit. We do not
 receive or store your payment details.</p>
@@ -199,8 +213,9 @@ username reservation, avatar, persona, friend invitations and friendships, your 
 journeys, your notification tokens, and your Luna chat records. The deletion is permanent and
 immediate; there is no recovery period and no archived copy.</p>
 <p>It also clears everything the app holds about you on that device — your manifests and conversations,
-check-ins, dreams and their interpretations, Luna progress, birth date and zodiac sign, avatar and
-persona, preferences, the app's offline cache of your cloud data, and your AI permission — and
+check-ins, dreams and their interpretations, the readings and fortunes Luna wrote for you, Luna
+progress, birth date and zodiac sign, avatar and persona, preferences, the app's offline cache of
+your cloud data, and your AI permission — and
 removes your sign-in. If your device cannot reach us, nothing is deleted anywhere and the app
 tells you so, so that your journey is never cleared from the device while the cloud copy
 survives.</p>
@@ -209,7 +224,8 @@ manifest, profile picture, birth date, preference, or progress from the deleted 
 with the single exception described next.</p>
 <p><strong>What the device keeps.</strong> Manifestle gives each <em>device</em> a small free
 allowance every day: how many messages Luna will answer, how many crystal ball readings she will
-give, and how many dreams she will read. How much of today's allowance you have already spent is a
+give, how many dreams she will read, and how many fortune cookies you may open. How much of today's
+allowance you have already spent is a
 count held on the device. It is not part of your account — it contains nothing you wrote and
 nothing Luna said, it is never uploaded, and it is never shown to anyone. Deleting your account,
 logging out, and creating a new account all leave that count exactly as it is, and it resets on its
