@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 4 September 2026</p>
+<p class="updated">Last updated: 7 September 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, keep a dream journal, and open a fortune cookie. This policy describes exactly what
@@ -53,6 +53,10 @@ disagree, treat it as a bug and tell us at
   <li><strong>If you link an Apple or Google account</strong>, your manifests (including their
       conversations with Luna), daily check-ins, dream journal, and Luna profile settings are
       stored in our cloud so they can be restored on a new or reinstalled device.</li>
+  <li><strong>For a linked account, we also store the current day's used Crystal Ball, dream
+      interpretation, and fortune-cookie allowances.</strong> These usage markers contain no text
+      you wrote and no reading, interpretation, or fortune Luna generated. They prevent today's
+      allowances from being restored by logging out, reinstalling, or signing in elsewhere.</li>
   <li><strong>The Dream Journal needs an account.</strong> Writing and saving a dream sends it
       nowhere; a dream is only ever sent to be interpreted when you ask Luna to read that
       particular one.</li>
@@ -75,9 +79,11 @@ never leaves your device:</p>
       preferences.</li>
   <li>The birth date and zodiac sign you choose when you first open the app, the crystal ball
       readings Luna gives you that day, and the fortunes she writes in that day's cookies.</li>
-  <li>How much of today's free allowance you have used — the messages Luna has answered, the
-      crystal ball readings she has given, the dreams she has read, and the fortune cookies you
-      have opened. This is counted per device, never uploaded, and it resets each day.</li>
+  <li>While you remain a guest, how much of today's free allowance you have used — the messages
+      Luna has answered, the crystal ball readings she has given, the dreams she has read, and the
+      fortune cookies you have opened. These guest counts are kept on that device, are not uploaded,
+      and reset each day. If you link an account, the limited charm usage described in section 4 is
+      also stored under that account.</li>
 </ul>
 <p>Deleting the app removes this local data from the device. Note that a linked account's copy in
 our cloud is <em>not</em> deleted by removing the app — see section 8. On iOS, a separate system
@@ -123,8 +129,9 @@ Nothing you have written is included — no manifest, message, check-in, or drea
 crystal ball reading, not even your zodiac sign. The fortune Luna writes back is kept on your
 device for the rest of that day and is never uploaded.</p>
 <p>Your name, email address, and account identity are <strong>not</strong> included in what we send
-to Google. Requests are authenticated so we can enforce abuse limits, but the authenticated
-identifier is used by our server only and is not forwarded as part of the prompt.</p>
+to Google. Requests are authenticated so we can enforce abuse limits and linked-account daily
+allowances, but the authenticated identifier is used by our server only and is not forwarded as
+part of the prompt.</p>
 
 <div class="callout">
 <strong>Training and retention.</strong> We use the Google Gemini API under a paid service tier,
@@ -152,14 +159,16 @@ account, we store the following under your account identifier:</p>
   <tr><td>Your dream journal: the dreams you write and Luna's interpretation of each one</td><td>Keep your dreams if you change or lose your device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest</td></tr>
   <tr><td>Luna profile: stage, bond, milestones, appearance, reminder time, appearance and language preferences</td><td>Keep Luna the same across devices</td></tr>
   <tr><td>Your birth date and zodiac sign</td><td>Restore them when you sign in on another device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest. Your birth date is never sent to Google Gemini; your zodiac sign is sent only when you open a crystal ball reading (section 3)</td></tr>
+  <tr><td>The calendar day and which Crystal Ball, dream-interpretation, and fortune-cookie allowances you have used that day</td><td>Keep a linked account's remaining allowances consistent after logout, reinstall, or sign-in on another device. These private markers contain no manifest, message, dream, reading, interpretation, or fortune and are never shown to friends</td></tr>
   <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest</td></tr>
   <tr><td>Notification token</td><td>Deliver Shared Manifest and reminder notifications</td></tr>
   <tr><td>Shared Manifest content: shared journeys, their date ranges, and your daily entries and notes in them</td><td>Show the shared journey to the friend you share it with</td></tr>
 </table>
 
-<p>Your fortune cookies are deliberately <em>not</em> in this table. A fortune is a moment on one
-device on one day rather than part of your journey, so it stays on the device that opened it and is
-never uploaded — which also means it does not come back when you sign in somewhere else.</p>
+<p>The <em>content</em> of your fortune cookies is deliberately not in this table. A fortune is a
+moment on one device on one day rather than part of your journey, so the words stay on the device
+that opened it and are never uploaded. Only the separate used-or-unused allowance marker described
+above is stored for a linked account.</p>
 
 <p>Your subscription entitlement is determined on your device by Apple's StoreKit. We do not
 receive or store your payment details.</p>
@@ -210,8 +219,9 @@ removing content and terminating accounts.</p>
 stored with it: your cloud manifests and conversations, daily check-ins, your dream journal and
 Luna's interpretations of those dreams, Luna profile state, your birth date and zodiac sign,
 username reservation, avatar, persona, friend invitations and friendships, your entries in shared
-journeys, your notification tokens, and your Luna chat records. The deletion is permanent and
-immediate; there is no recovery period and no archived copy.</p>
+journeys, your notification tokens, your linked-account daily allowance markers, and your Luna chat
+records. The deletion is permanent and immediate; there is no recovery period and no archived
+copy.</p>
 <p>It also clears everything the app holds about you on that device — your manifests and conversations,
 check-ins, dreams and their interpretations, the readings and fortunes Luna wrote for you, Luna
 progress, birth date and zodiac sign, avatar and persona, preferences, the app's offline cache of
@@ -222,15 +232,16 @@ survives.</p>
 <p>Starting again afterwards starts you from nothing: a new account is a new account, and no
 manifest, profile picture, birth date, preference, or progress from the deleted one comes back —
 with the single exception described next.</p>
-<p><strong>What the device keeps.</strong> Manifestle gives each <em>device</em> a small free
-allowance every day: how many messages Luna will answer, how many crystal ball readings she will
-give, how many dreams she will read, and how many fortune cookies you may open. How much of today's
-allowance you have already spent is a
-count held on the device. It is not part of your account — it contains nothing you wrote and
-nothing Luna said, it is never uploaded, and it is never shown to anyone. Deleting your account,
-logging out, and creating a new account all leave that count exactly as it is, and it resets on its
-own when the next day begins. We do it this way so the day's free allowance cannot be refilled by
-deleting an account and making another.</p>
+<p><strong>What the device keeps.</strong> Manifestle gives each device a small free allowance every
+day: how many messages Luna will answer, how many crystal ball readings she will give, how many
+dreams she will read, and how many fortune cookies you may open. The device keeps its local count of
+what has already been used today when you log out, delete an account, or create a new one, and that
+local count resets when the next day begins. For a linked account, the server also keeps that day's
+Crystal Ball, dream-interpretation, and fortune-cookie usage markers so the account's allowances
+cannot be refilled by reinstalling or signing in elsewhere. Those account markers contain nothing
+you wrote and nothing Luna said, are never shown to anyone, and are deleted with the account. We
+keep the device's local same-day count after account deletion so deleting one account and making
+another on the same device cannot refill the day's free allowance.</p>
 <p><strong>What we keep.</strong> If you reported someone's content to us, that report — including
 the fact that you filed it — is kept after your account is deleted, because we need it to act on
 abuse and to show we did. Anything a friend independently holds, such as a shared journey you both
