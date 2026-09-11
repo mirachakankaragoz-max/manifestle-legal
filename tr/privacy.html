@@ -32,7 +32,7 @@
 <body>
 
 <h1>Manifestle Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 7 Eylül 2026</p>
+<p class="updated">Son güncelleme: 11 Eylül 2026</p>
 
 <p>Manifestle özel bir ritüel uygulamasıdır: niyetlerini mühürler, Luna ile konuşur, günlük
 check-in'lerini kaydeder, bir rüya günlüğü tutar ve fal kurabiyeni açarsın. Bu politika, hangi verinin cihazında
@@ -98,12 +98,12 @@ kaybolduktan ya da değiştirildikten sonra geri getirilemez. Bağlı bir hesap,
 Yerel Yolculuk verilerini Manifestle bulutundan geri yükleyebilir.</p>
 
 <h2>3. Luna'nın yapay zekâ cevapları</h2>
-<p>Luna'nın cevaplarını <strong>Google Gemini</strong> yazar. Manifestle, Luna ilk kez cevap
+<p>Luna'nın cevapları <strong>OpenAI API</strong> kullanılarak yazılır. Manifestle, Luna ilk kez cevap
 verecekken senden açıkça izin ister ve sen izin vermeden hiçbir şey göndermez. İznini istediğin
 zaman <em>Ayarlar → Luna'nın Yapay Zekâ Cevapları</em> bölümünden geri alabilirsin; uygulama
 göndermeyi anında durdurur.</p>
 
-<p>İzin verdiğinde her cevap için şunlar kendi sunucumuza, oradan da Google Gemini API'sine
+<p>İzin verdiğinde her cevap için şunlar kendi sunucumuza, oradan da OpenAI API'ye
 iletilir:</p>
 <ul>
   <li>Az önce yazdığın mesaj.</li>
@@ -126,17 +126,19 @@ uygulama dilin, günün hangi kurabiyesini açtığın ve seçtiğin Luna karakt
 hiçbiri dahil edilmez — ne bir manifest, ne bir mesaj, ne bir check-in, ne de bir rüya — ve kristal
 küre falından farklı olarak burcun bile gönderilmez. Luna'nın yazdığı mesaj o günün geri kalanında
 cihazında kalır ve hiçbir zaman yüklenmez.</p>
-<p>Adın, e-posta adresin ve hesap kimliğin Google'a gönderilenlerin içinde <strong>yer almaz</strong>.
-İstekler, kötüye kullanım sınırlarını ve bağlı hesaba ait günlük hakları uygulayabilmemiz için
-kimlik doğrulamalıdır; ancak bu kimlik yalnızca kendi sunucumuzda kullanılır ve isteme dahil
-edilerek iletilmez.</p>
+<p>Adın ve e-posta adresin OpenAI'a gönderilenlerin içinde <strong>yer almaz</strong>. İstekler,
+kötüye kullanım sınırlarını ve bağlı hesaba ait günlük hakları uygulayabilmemiz için kimlik
+doğrulamalıdır. Sunucumuz ayrıca kötüye kullanımın önlenmesi için hesap kimliğinden türetilen tek
+yönlü, takma adlı bir özeti OpenAI'a gönderir; bu özet Luna'nın istemine dahil edilmez ve OpenAI
+tarafından Firebase hesap kimliğini geri elde etmek için kullanılamaz.</p>
 
 <div class="callout">
-<strong>Eğitim ve saklama.</strong> Google Gemini API'sini ücretli bir hizmet katmanında
-kullanıyoruz; Google bu katmanda gönderilen istemleri ve yanıtları modellerini eğitmek için
-kullanmadığını belirtir. Google, istek verilerini kendi koşullarına göre işler ve saklar; bkz.
-<a href="https://ai.google.dev/gemini-api/terms">Gemini API Ek Hizmet Koşulları</a> ve
-<a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>. Kendi
+<strong>Eğitim ve saklama.</strong> OpenAI, müşteri açıkça katılmadıkça API verilerini modellerini
+eğitmek için kullanmadığını belirtir. Manifestle her isteğin Responses API uygulama durumu olarak
+saklanmamasını ister; buna rağmen OpenAI, istemleri ve yanıtları içeren kötüye kullanım izleme
+kayıtlarını varsayılan olarak 30 güne kadar tutabilir. Bkz. OpenAI
+<a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint">API veri denetimleri</a>.
+Kendi
 sunucularımızda, tekrarlanan bir isteğin iki kez ücretlendirilmemesi ya da iki kez
 yanıtlanmaması için Luna'nın cevap, fal, rüya yorumu ya da kurabiye mesajı metni kısa süre
 saklanır; bu kayıtlar 30 gün sonra otomatik olarak, hesabını sildiğinde ise anında silinir.
@@ -156,7 +158,7 @@ hesap kimliğin altında şunları saklarız:</p>
   <tr><td>Günlük check-in'lerin (tarih, ruh hâli, not, Luna'nın cevabı)</td><td>Serini ve Luna'nın ilerlemesini geri getirmek</td></tr>
   <tr><td>Rüya günlüğün: yazdığın rüyalar ve Luna'nın her biri için yaptığı yorum</td><td>Cihazını değiştirdiğinde ya da kaybettiğinde rüyalarının sende kalması için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez</td></tr>
   <tr><td>Luna profili: evre, bağ, kilometre taşları, görünüm, hatırlatıcı saati, görünüm ve dil tercihleri</td><td>Luna'yı cihazlar arasında aynı tutmak</td></tr>
-  <tr><td>Doğum tarihin ve burcun</td><td>Başka bir cihazda giriş yaptığında geri gelmeleri için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez. Doğum tarihin Google Gemini'ye hiçbir zaman gönderilmez; burcun yalnızca bir kristal küre falı açtığında gönderilir (3. bölüm)</td></tr>
+  <tr><td>Doğum tarihin ve burcun</td><td>Başka bir cihazda giriş yaptığında geri gelmeleri için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez. Doğum tarihin OpenAI'a hiçbir zaman gönderilmez; burcun yalnızca bir kristal küre falı açtığında gönderilir (3. bölüm)</td></tr>
   <tr><td>Takvim günü ile o gün kullandığın Kristal Küre, rüya yorumu ve fal kurabiyesi hakları</td><td>Bağlı hesabın kalan haklarını çıkış, yeniden kurulum veya başka bir cihazda giriş sonrasında tutarlı kılmak için. Bu özel işaretler hiçbir manifest, mesaj, rüya, fal, yorum ya da kurabiye mesajı içermez ve arkadaşlarına gösterilmez</td></tr>
   <tr><td>Kullanıcı adı, seçtiğin avatar, seçtiğin Luna karakteri</td><td>Ortak Manifest için kimlik</td></tr>
   <tr><td>Bildirim jetonu</td><td>Ortak Manifest ve hatırlatıcı bildirimlerini iletmek</td></tr>
@@ -202,7 +204,7 @@ kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
       Android sürümü, bir de Crashlytics'in o kurulum için ürettiği bir tanımlayıcı.
       Manifestlerini, mesajlarını, check-in'lerini, rüyalarını, doğum tarihini, adını, e-postanı
       ya da hesap kimliğini göndermez. iOS uygulamasında hiç çökme raporlaması yoktur.</li>
-  <li><strong>Google Gemini API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının
+  <li><strong>OpenAI API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının
       üretilmesi.</li>
   <li><strong>Apple</strong> — Apple ile Giriş Yap, bildirim iletimi ve App Store satın
       alımları.</li>

@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 7 September 2026</p>
+<p class="updated">Last updated: 11 September 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, keep a dream journal, and open a fortune cookie. This policy describes exactly what
@@ -100,13 +100,13 @@ uninstalled or the phone is lost or replaced. A linked account can restore the L
 described in section 4 from Manifestle's cloud.</p>
 
 <h2>3. Luna's AI replies</h2>
-<p>Luna's replies are written by <strong>Google Gemini</strong>. Manifestle asks for your explicit
+<p>Luna's replies are written using the <strong>OpenAI API</strong>. Manifestle asks for your explicit
 permission the first time Luna would reply, and never transmits anything before you grant it. You
 can withdraw permission at any time in <em>Settings → Luna's AI Replies</em>; the app stops sending
 immediately.</p>
 
 <p>When permission is granted, each reply sends the following to our own server, which relays it
-to the Google Gemini API:</p>
+to the OpenAI API:</p>
 <ul>
   <li>The message you just wrote.</li>
   <li>The text of the intention Luna is holding for that conversation.</li>
@@ -128,17 +128,19 @@ your app language, which of the day's cookies you are opening, and the Luna pers
 Nothing you have written is included — no manifest, message, check-in, or dream — and unlike a
 crystal ball reading, not even your zodiac sign. The fortune Luna writes back is kept on your
 device for the rest of that day and is never uploaded.</p>
-<p>Your name, email address, and account identity are <strong>not</strong> included in what we send
-to Google. Requests are authenticated so we can enforce abuse limits and linked-account daily
-allowances, but the authenticated identifier is used by our server only and is not forwarded as
-part of the prompt.</p>
+<p>Your name and email address are <strong>not</strong> included in what we send to OpenAI. Requests
+are authenticated so we can enforce abuse limits and linked-account daily allowances. Our server
+also sends OpenAI a one-way, pseudonymous hash derived from your account identifier for abuse
+prevention; it is not included in Luna's prompt and cannot be used by OpenAI to recover your
+Firebase account identifier.</p>
 
 <div class="callout">
-<strong>Training and retention.</strong> We use the Google Gemini API under a paid service tier,
-under which Google states that it does not use submitted prompts or responses to train its
-models. Google processes and retains request data according to its own terms; see the
-<a href="https://ai.google.dev/gemini-api/terms">Gemini API Additional Terms of Service</a> and the
-<a href="https://policies.google.com/privacy">Google Privacy Policy</a>. On our own servers, the
+<strong>Training and retention.</strong> OpenAI states that API data is not used to train its
+models unless the customer explicitly opts in. Manifestle sets each request not to be stored as
+Responses API application state; OpenAI may nevertheless retain abuse-monitoring logs containing
+prompts and responses for up to 30 days by default. See OpenAI's
+<a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint">API data controls</a>.
+On our own servers, the
 text of a Luna reply, reading, dream interpretation, or fortune is stored briefly so that a
 retried request cannot be charged or answered twice; these records are automatically deleted after
 30 days, and immediately when you delete your account.
@@ -158,7 +160,7 @@ account, we store the following under your account identifier:</p>
   <tr><td>Your daily check-ins (date, mood, note, Luna's reply)</td><td>Restore your streak and Luna's progress</td></tr>
   <tr><td>Your dream journal: the dreams you write and Luna's interpretation of each one</td><td>Keep your dreams if you change or lose your device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest</td></tr>
   <tr><td>Luna profile: stage, bond, milestones, appearance, reminder time, appearance and language preferences</td><td>Keep Luna the same across devices</td></tr>
-  <tr><td>Your birth date and zodiac sign</td><td>Restore them when you sign in on another device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest. Your birth date is never sent to Google Gemini; your zodiac sign is sent only when you open a crystal ball reading (section 3)</td></tr>
+  <tr><td>Your birth date and zodiac sign</td><td>Restore them when you sign in on another device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest. Your birth date is never sent to OpenAI; your zodiac sign is sent only when you open a crystal ball reading (section 3)</td></tr>
   <tr><td>The calendar day and which Crystal Ball, dream-interpretation, and fortune-cookie allowances you have used that day</td><td>Keep a linked account's remaining allowances consistent after logout, reinstall, or sign-in on another device. These private markers contain no manifest, message, dream, reading, interpretation, or fortune and are never shown to friends</td></tr>
   <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest</td></tr>
   <tr><td>Notification token</td><td>Deliver Shared Manifest and reminder notifications</td></tr>
@@ -205,7 +207,7 @@ removing content and terminating accounts.</p>
       an identifier Crashlytics generates for the installation. It does not send your manifests,
       messages, check-ins, dreams, birth date, name, email, or account id. The iOS app has no crash
       reporting at all.</li>
-  <li><strong>Google Gemini API</strong> — generating Luna's replies, as described in section 3.</li>
+  <li><strong>OpenAI API</strong> — generating Luna's replies, as described in section 3.</li>
   <li><strong>Apple</strong> — Sign in with Apple, push notification delivery, and App Store
       purchases.</li>
   <li><strong>Google Play</strong> — <em>Android only</em>. Distribution of the app and processing of
