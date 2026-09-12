@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 11 September 2026</p>
+<p class="updated">Last updated: 12 September 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, keep a dream journal, and open a fortune cookie. This policy describes exactly what
@@ -56,6 +56,8 @@ data described in this policy. You can contact the controller at
   <li><strong>If you link an Apple or Google account</strong>, your manifests (including their
       conversations with Luna), daily check-ins, dream journal, and Luna profile settings are
       stored in our cloud so they can be restored on a new or reinstalled device.</li>
+  <li><strong>Luna Memory is a Manifestle Plus feature for linked accounts.</strong> It keeps a
+      compact set of useful details from your conversations. You can view or clear it in Settings.</li>
   <li><strong>For a linked account, we also store the current day's used Crystal Ball, dream
       interpretation, and fortune-cookie allowances.</strong> These usage markers contain no text
       you wrote and no reading, interpretation, or fortune Luna generated. They prevent today's
@@ -114,8 +116,18 @@ to the OpenAI API:</p>
   <li>The message you just wrote.</li>
   <li>The text of the intention Luna is holding for that conversation.</li>
   <li>Up to the last 10 messages of that conversation.</li>
+  <li>For a linked account with active Manifestle Plus, Luna's compact memory from earlier
+      conversations, if one exists.</li>
   <li>Your app language and the Luna persona you chose.</li>
 </ul>
+<p><strong>Luna Memory.</strong> For a linked account with active Manifestle Plus, our server may
+periodically ask OpenAI to update a compact memory using the recent conversation. It is limited to
+useful details such as preferences, important people, goals, routines, and milestones. We instruct
+the model not to infer or retain sensitive traits, credentials, precise location, financial details,
+diagnoses, or transient moods. The resulting memory is stored privately in Firebase under your
+account, is included only in future Luna chats while Plus is active, and is never visible to Shared
+Manifest friends. If Plus expires, the memory is paused but remains available for you to view or
+clear in <em>Settings → Luna's Memory</em>.</p>
 <p>Luna's <strong>crystal ball readings</strong> are written the same way, under the same
 permission. Opening a reading sends only your zodiac sign, whether the reading is daily or weekly,
 the calendar date it is for, your app language, and the Luna persona you chose. Your birth date
@@ -155,6 +167,8 @@ On our own servers, the
 text of a Luna reply, reading, dream interpretation, or fortune is stored briefly so that a
 retried request cannot be charged or answered twice; these records are automatically deleted after
 30 days, and immediately when you delete your account.
+Luna Memory is different from those short-lived request records: it remains until you clear it in
+Settings or delete your account.
 </div>
 
 <p>Luna is a companion, not a therapist, doctor, or emergency service. If a message suggests
@@ -171,6 +185,7 @@ account, we store the following under your account identifier:</p>
   <tr><td>Your daily check-ins (date, mood, note, Luna's reply)</td><td>Restore your streak and Luna's progress</td></tr>
   <tr><td>Your dream journal: the dreams you write and Luna's interpretation of each one</td><td>Keep your dreams if you change or lose your device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest</td></tr>
   <tr><td>Luna profile: stage, bond, milestones, appearance, reminder time, appearance and language preferences</td><td>Keep Luna the same across devices</td></tr>
+  <tr><td>Luna Memory: a compact set of useful details from your Luna conversations</td><td>Give linked Plus accounts continuity across conversations. It is private, can be viewed or cleared in Settings, and is sent to OpenAI only for the Luna chat and memory-update processing described in section 3</td></tr>
   <tr><td>Your birth date and zodiac sign</td><td>Restore them when you sign in on another device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest. Your birth date is never sent to OpenAI; your zodiac sign is sent only when you open a crystal ball reading (section 3)</td></tr>
   <tr><td>The calendar day and which Crystal Ball, dream-interpretation, and fortune-cookie allowances you have used that day</td><td>Keep a linked account's remaining allowances consistent after logout, reinstall, or sign-in on another device. These private markers contain no manifest, message, dream, reading, interpretation, or fortune and are never shown to friends</td></tr>
   <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest</td></tr>
@@ -218,7 +233,7 @@ removing content and terminating accounts.</p>
       an identifier Crashlytics generates for the installation. It does not send your manifests,
       messages, check-ins, dreams, birth date, name, email, or account id. The iOS app has no crash
       reporting at all.</li>
-  <li><strong>OpenAI API</strong> — generating Luna's replies, as described in section 3.</li>
+  <li><strong>OpenAI API</strong> — generating Luna's replies and updating Luna Memory, as described in section 3.</li>
   <li><strong>Apple</strong> — Sign in with Apple, push notification delivery, and App Store
       purchases.</li>
   <li><strong>Google Play</strong> — <em>Android only</em>. Distribution of the app and processing of
@@ -257,7 +272,7 @@ stored with it: your cloud manifests and conversations, daily check-ins, your dr
 Luna's interpretations of those dreams, Luna profile state, your birth date and zodiac sign,
 username reservation, avatar, persona, friend invitations and friendships, your entries in shared
 journeys, your notification tokens, your linked-account daily allowance markers, and your Luna chat
-records. The deletion is permanent and immediate; there is no recovery period and no archived
+records, including Luna Memory. The deletion is permanent and immediate; there is no recovery period and no archived
 copy.</p>
 <p>It also clears everything the app holds about you on that device — your manifests and conversations,
 check-ins, dreams and their interpretations, the readings and fortunes Luna wrote for you, Luna
