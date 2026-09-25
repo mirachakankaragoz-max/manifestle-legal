@@ -66,8 +66,9 @@ data described in this policy. You can contact the controller at
       nowhere; a dream is only ever sent to be interpreted when you ask Luna to read that
       particular one.</li>
   <li><strong>The fortune cookie needs an account too, and sends nothing you have written.</strong>
-      Breaking one asks Luna for a line; the request carries the date, your app language, and which
-      of the day's cookies it is, and nothing else.</li>
+      Breaking one asks Luna for a line; the request carries the date, your app language, which
+      of the day's cookies it is, and the Luna persona you chose. It does not include anything you
+      wrote, and it does not include your zodiac sign.</li>
   <li>We do not use advertising or analytics SDKs, and we do not track you across apps or
       websites.</li>
   <li>You can delete your account and everything stored with it from inside the app.</li>
@@ -186,7 +187,8 @@ account, we store the following under your account identifier:</p>
   <tr><td>Your dream journal: the dreams you write and Luna's interpretation of each one</td><td>Keep your dreams if you change or lose your device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest</td></tr>
   <tr><td>Luna profile: stage, bond, milestones, appearance, reminder time, appearance and language preferences</td><td>Keep Luna the same across devices</td></tr>
   <tr><td>Luna Memory: a compact set of useful details from your Luna conversations</td><td>Give linked Plus accounts continuity across conversations. It is private, can be viewed or cleared in Settings, and is sent to OpenAI only for the Luna chat and memory-update processing described in section 3</td></tr>
-  <tr><td>Your birth date and zodiac sign</td><td>Restore them when you sign in on another device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest. Your birth date is never sent to OpenAI; your zodiac sign is sent only when you open a crystal ball reading (section 3)</td></tr>
+  <tr><td>Your birth date</td><td>When you link an account, it is stored with your private journey so it can be restored on another device. It is never shown to Shared Manifest friends and never sent to OpenAI.</td></tr>
+  <tr><td>Your zodiac sign</td><td>The sign derived from your birth date. Accepted Shared Manifest friends can see it beside your avatar. It is sent to OpenAI only when you open a crystal ball reading (section 3). Chat, dream interpretations, and fortune cookies do not include it unless you type it into a message yourself.</td></tr>
   <tr><td>The calendar day and which Crystal Ball, dream-interpretation, and fortune-cookie allowances you have used that day</td><td>Keep a linked account's remaining allowances consistent after logout, reinstall, or sign-in on another device. These private markers contain no manifest, message, dream, reading, interpretation, or fortune and are never shown to friends</td></tr>
   <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest</td></tr>
   <tr><td>Notification token</td><td>Deliver Shared Manifest and reminder notifications</td></tr>
@@ -207,8 +209,13 @@ receive or store your payment details.</p>
 <p>Shared Manifest lets you share a journey with a friend. Anything you post there — your journey
 title, daily entries, and notes — is visible to the member you share it with. Do not put anything
 in a shared journey that you would not want that person to read.</p>
+<p>The zodiac sign derived from your birth date is visible to accepted Shared Manifest friends.
+Your birth date is not.</p>
 <p>Every shared journey offers a <strong>Report</strong> control for content that is abusive or
-otherwise objectionable, alongside the ability to remove the friend. Reports reach us at
+otherwise objectionable, alongside the ability to remove the friend. You can also block a person.
+A block removes the connection and stops a new invite, friendship, or shared entry between you in
+either direction. Unblocking does not restore the friendship. Reports stay available after a block.
+Reports reach us at
 <a href="mailto:support@tortubuild.com">support@tortubuild.com</a> and we act on them, including
 removing content and terminating accounts.</p>
 
@@ -305,8 +312,12 @@ device. Use Delete Manifestle Account, or write to
 <em>Settings → Your Data → Export My Data</em>.</p>
 
 <h2>10. Children</h2>
-<p>Manifestle is not directed to children under 13, and we do not knowingly collect personal data
-from them. If you believe a child has provided us data, contact us and we will delete it.</p>
+<p>Manifestle is not directed to children under 13. If a birth date shows that the person is under
+13, Manifestle does not create or link an account from that answer, does not send their information
+to OpenAI, and does not open Shared Manifest. The date itself is not kept on the device just to
+remember that result. An account that already exists is not deleted automatically and is not given
+a different birth date; you can delete it from Settings or by writing to us. If you believe a child
+has provided us data, contact us and we will delete it.</p>
 
 <h2>11. Your rights</h2>
 <p>Depending on where you live, you may have rights to access, correct, export, or delete your

@@ -66,8 +66,8 @@ uygulamanın davranışı çelişiyorsa bunu bir hata olarak kabul et ve
       göndermez; bir rüya yalnızca sen Luna'dan o rüyayı okumasını istediğinde yorumlanmak üzere
       gönderilir.</li>
   <li><strong>Fal kurabiyesi için de hesap gerekir ve yazdıklarından hiçbiri gönderilmez.</strong>
-      Bir kurabiyeyi kırmak Luna'dan bir cümle ister; istek yalnızca tarihi, uygulama dilini ve
-      günün hangi kurabiyesi olduğunu taşır, başka hiçbir şeyi değil.</li>
+      Bir kurabiyeyi kırmak Luna'dan bir cümle ister; istek tarihi, uygulama dilini, günün hangi
+      kurabiyesi olduğunu ve seçtiğin Luna karakterini taşır. Yazdığın hiçbir şeyi ve burcunu içermez.</li>
   <li>Reklam veya analitik SDK'ları kullanmıyoruz ve seni uygulamalar ile siteler arasında
       izlemiyoruz.</li>
   <li>Hesabını ve onunla saklanan her şeyi uygulama içinden silebilirsin.</li>
@@ -186,7 +186,8 @@ hesap kimliğin altında şunları saklarız:</p>
   <tr><td>Rüya günlüğün: yazdığın rüyalar ve Luna'nın her biri için yaptığı yorum</td><td>Cihazını değiştirdiğinde ya da kaybettiğinde rüyalarının sende kalması için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez</td></tr>
   <tr><td>Luna profili: evre, bağ, kilometre taşları, görünüm, hatırlatıcı saati, görünüm ve dil tercihleri</td><td>Luna'yı cihazlar arasında aynı tutmak</td></tr>
   <tr><td>Luna'nın Hafızası: Luna sohbetlerinden yararlı ayrıntıları içeren kısa bir küme</td><td>Bağlı Plus hesaplarında sohbetler arasında devamlılık sağlamak. Özeldir, Ayarlar'dan görülebilir veya temizlenebilir ve yalnızca 3. bölümde açıklanan Luna sohbeti ile hafıza güncelleme işlemleri için OpenAI'a gönderilir</td></tr>
-  <tr><td>Doğum tarihin ve burcun</td><td>Başka bir cihazda giriş yaptığında geri gelmeleri için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez. Doğum tarihin OpenAI'a hiçbir zaman gönderilmez; burcun yalnızca bir kristal küre falı açtığında gönderilir (3. bölüm)</td></tr>
+  <tr><td>Doğum tarihin</td><td>Bir hesap bağladığında, başka bir cihazda geri gelebilmesi için özel yolculuğunla birlikte saklanır. Ortak Manifest arkadaşlarına gösterilmez ve OpenAI'a hiç gönderilmez.</td></tr>
+  <tr><td>Burcun</td><td>Doğum tarihinden çıkarılan burç. Kabul edilmiş Ortak Manifest arkadaşların bunu avatarının yanında görebilir. OpenAI'a yalnızca bir kristal küre falı açtığında gönderilir (3. bölüm). Sohbet, rüya yorumu ve fal kurabiyesi, sen mesaja kendin yazmadıkça burcu içermez.</td></tr>
   <tr><td>Takvim günü ile o gün kullandığın Kristal Küre, rüya yorumu ve fal kurabiyesi hakları</td><td>Bağlı hesabın kalan haklarını çıkış, yeniden kurulum veya başka bir cihazda giriş sonrasında tutarlı kılmak için. Bu özel işaretler hiçbir manifest, mesaj, rüya, fal, yorum ya da kurabiye mesajı içermez ve arkadaşlarına gösterilmez</td></tr>
   <tr><td>Kullanıcı adı, seçtiğin avatar, seçtiğin Luna karakteri</td><td>Ortak Manifest için kimlik</td></tr>
   <tr><td>Bildirim jetonu</td><td>Ortak Manifest ve hatırlatıcı bildirimlerini iletmek</td></tr>
@@ -207,8 +208,12 @@ ve saklamayız.</p>
 <p>Ortak Manifest, bir yolculuğu bir arkadaşınla paylaşmanı sağlar. Orada paylaştığın her şey —
 yolculuk başlığın, günlük girişlerin ve notların — paylaştığın kişiye görünür. Ortak bir
 yolculuğa, o kişinin okumasını istemeyeceğin hiçbir şeyi yazma.</p>
+<p>Doğum tarihinden çıkarılan burç, kabul edilmiş Ortak Manifest arkadaşlarına görünür. Doğum tarihin görünmez.</p>
 <p>Her ortak yolculukta, saldırgan ya da başka şekilde uygunsuz içerik için arkadaşlıktan
-çıkarmanın yanında bir <strong>Bildir</strong> seçeneği bulunur. Bildirimler
+çıkarmanın yanında bir <strong>Bildir</strong> seçeneği bulunur. Bir kişiyi de engelleyebilirsin.
+Engel bağlantıyı kaldırır ve aranızda yeni bir daveti, arkadaşlığı veya ortak girişi iki yönde de
+durdurur. Engeli kaldırmak arkadaşlığı geri getirmez. Engelledikten sonra bildirim yapılabilir.
+Bildirimler
 <a href="mailto:support@tortubuild.com">support@tortubuild.com</a> adresine ulaşır; içeriği
 kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
 
@@ -307,8 +312,12 @@ silelim.</p>
 <em>Ayarlar → Verilerin → Verilerimi Dışa Aktar</em> ile dışa aktarabilirsin.</p>
 
 <h2>10. Çocuklar</h2>
-<p>Manifestle 13 yaşın altındaki çocuklara yönelik değildir ve onlardan bilerek kişisel veri
-toplamayız. Bir çocuğun bize veri verdiğini düşünüyorsan bize ulaş, veriyi silelim.</p>
+<p>Manifestle 13 yaşın altındaki çocuklara yönelik değildir. Bir doğum tarihi kişinin 13 yaşından
+küçük olduğunu gösterirse Manifestle bu yanıttan hesap oluşturmaz veya bağlamaz, bilgisini OpenAI'a
+göndermez ve Ortak Manifest'i açmaz. Tarihin kendisi, bu sonucu hatırlamak için cihazda tutulmaz.
+Zaten var olan bir hesap kendiliğinden silinmez ve başka bir doğum tarihiyle değiştirilmez; hesabı
+Ayarlar'dan veya bize yazarak silebilirsin. Bir çocuğun bize veri verdiğini düşünüyorsan bize ulaş,
+veriyi silelim.</p>
 
 <h2>11. Hakların</h2>
 <p>Yaşadığın yere bağlı olarak kişisel verilerine erişme, düzeltme, dışa aktarma veya silme ve
