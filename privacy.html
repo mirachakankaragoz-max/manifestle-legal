@@ -279,18 +279,15 @@ stored with it: your cloud manifests and conversations, daily check-ins, your dr
 Luna's interpretations of those dreams, Luna profile state, your birth date and zodiac sign,
 username reservation, avatar, persona, friend invitations and friendships, your entries in shared
 journeys, your notification tokens, your linked-account daily allowance markers, and your Luna chat
-records, including Luna Memory. The deletion is permanent and immediate; there is no recovery period and no archived
-copy.</p>
+records, including Luna Memory. Deletion is permanent once completed; there is no recovery period or archived copy of your journey.</p>
 <p>It also clears everything the app holds about you on that device — your manifests and conversations,
 check-ins, dreams and their interpretations, the readings and fortunes Luna wrote for you, Luna
 progress, birth date and zodiac sign, avatar and persona, preferences, the app's offline cache of
 your cloud data, and your AI permission — and
-removes your sign-in. If your device cannot reach us, nothing is deleted anywhere and the app
-tells you so, so that your journey is never cleared from the device while the cloud copy
-survives.</p>
+removes your sign-in after cloud deletion succeeds. If deletion fails or is interrupted, the app keeps your local journey and tells you to retry. Some cloud records may already have been removed; retrying finishes the remaining cleanup.</p>
 <p>Starting again afterwards starts you from nothing: a new account is a new account, and no
 manifest, profile picture, birth date, preference, or progress from the deleted one comes back —
-with the single exception described next.</p>
+except for the limited safety and allowance records described next.</p>
 <p><strong>What the device keeps.</strong> Manifestle gives each device a small free allowance every
 day: how many messages Luna will answer, how many crystal ball readings she will give, how many
 dreams she will read, and how many fortune cookies you may open. The device keeps its local count of
@@ -300,7 +297,8 @@ Crystal Ball, dream-interpretation, and fortune-cookie usage markers so the acco
 cannot be refilled by reinstalling or signing in elsewhere. Those account markers contain nothing
 you wrote and nothing Luna said, are never shown to anyone, and are deleted with the account. We
 keep the device's local same-day count after account deletion so deleting one account and making
-another on the same device cannot refill the day's free allowance.</p>
+another on the same device cannot refill the day's free allowance. If a birth-date answer previously indicated an age below 13, the device also retains that restriction across ordinary date edits and account deletion; it does not retain the rejected birth date for this purpose.</p>
+<p>During account deletion, we create a temporary server record containing the account identifier and an expiry time, without your writing. It blocks in-flight requests from recreating deleted data. The record expires after two hours and is removed by the database's automatic retention process, which may run later.</p>
 <p><strong>What we keep.</strong> If you reported someone's content to us, that report — including
 the fact that you filed it — is kept after your account is deleted, because we need it to act on
 abuse and to show we did. Anything a friend independently holds, such as a shared journey you both
