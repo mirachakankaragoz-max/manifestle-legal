@@ -352,7 +352,7 @@ Silme işlemi tamamlandığında kalıcıdır; geri alma süresi veya yolculuğu
 check-in'lerin, rüyaların ve yorumları, Luna'nın senin için hazırladığı burç yorumları ve Ay Madalyonu mesajları,
 Luna ilerlemen, doğum tarihin ve burcun, avatarın ve karakterin, tercihlerin, uygulamanın bulut
 verine ait çevrimdışı önbelleği ve yapay zekâ iznin —
-ve buluttaki silme işlemi başarılı olduktan sonra oturumunu kapatır. Silme işlemi başarısız olur veya yarıda kesilirse uygulama cihazındaki yolculuğunu korur ve yeniden denemeni ister. Bazı bulut kayıtları zaten silinmiş olabilir; yeniden denemek kalan temizliği tamamlar.</p>
+ve buluttaki silme işlemi başarılı olduktan sonra oturumunu kapatır. Silme işlemi başarısız olur veya yarıda kesilirse uygulama cihazındaki yolculuğunu korur ve yeniden denemeni ister. Bazı bulut kayıtları zaten silinmiş olabilir. Silme işlemini yeniden dene; artık giriş yapamıyorsan veya hata devam ediyorsa kalan temizliği tamamlayabilmemiz için privacy@tortubuild.com adresinden bize ulaş.</p>
 <p>Sonrasında yeniden başlamak, sıfırdan başlamaktır: yeni bir hesap yeni bir hesaptır; silinen
 hesaptan hiçbir manifest, profil fotoğrafı, doğum tarihi, tercih ya da ilerleme geri gelmez —
 aşağıda açıklanan sınırlı güvenlik ve hak kullanım kayıtları dışında.</p>
@@ -366,10 +366,15 @@ hesabın haklarını yenilemez. Bu hesap işaretleri senin yazdığın ya da Lun
 içermez, kimseye gösterilmez ve hesapla birlikte silinir. Bir hesabı silip aynı cihazda yenisini
 oluşturmanın o günkü ücretsiz hakkı yenilememesi için, hesap silindikten sonra cihazdaki aynı güne
 ait yerel sayıyı koruruz. Daha önce verilen bir doğum tarihi 13 yaşın altında olduğunu gösterdiyse cihaz, olağan tarih değişiklikleri ve hesap silme sonrasında bu kısıtlamayı da korur; bu amaçla reddedilen doğum tarihini saklamaz.</p>
-<p>Hesap silinirken sunucuda, yazdıklarını içermeyen, hesap kimliği ve hedef sona erme zamanını
-içeren bir güvenlik kaydı oluştururuz. Bu kayıt, devam eden isteklerin silinen verileri yeniden
-oluşturmasını engeller. Hedef süre iki saattir; ancak bu kayıt için otomatik temizleme şu anda
-etkin olmadığından kayıt operasyonel temizliği beklerken daha uzun süre kalabilir.</p>
+<p>Hesap silme başladığında, hesap kimliğiyle ilişkili, silme durumu ve zaman bilgileri içeren,
+yazdıklarını içermeyen küçük bir güvenlik kaydı oluştururuz. Bu kayıt, mevcut oturumlardan gelen
+yazma işlemlerini ve devam eden isteklerin silinen verileri yeniden oluşturmasını engeller.
+Temizlik tamamlanmadığı sürece kaydın otomatik sona erme zamanı yoktur; silme yeniden denenene
+veya destek aracılığıyla tamamlanana kadar korunur. Yalnızca hesap verilerinin temizliği ve
+giriş yapılan hesabın silinmesi başarıyla tamamlandıktan sonra kayda iki saatlik sona erme
+süresi veririz. Ardından Firestore, yaşam süresi (TTL) mekanizmasıyla kaydı otomatik kaldırır.
+Kaldırma eşzamansızdır ve genellikle süre dolduktan sonraki 24 saat içinde gerçekleşir;
+bu, tam bir saatte silineceğine dair bir garanti değildir.</p>
 <p>Yalnızca kuruluma ait küçük işaretler de kalabilir; örneğin etkin bir sürümde TikTok kurulum
 olayının daha önce kaydedilip kaydedilmediği. Bunlar yinelenen kurulum olaylarını önler;
 yazdıklarını içermez veya silinen yolculuğu geri getirmez. Hesaptan ayrıldığında reklam iznin

@@ -351,7 +351,7 @@ records, including Luna Memory. Deletion is permanent once completed; there is n
 check-ins, dreams and their interpretations, the horoscopes and Moon Locket messages Luna wrote for you, Luna
 progress, birth date and zodiac sign, avatar and persona, preferences, the app's offline cache of
 your cloud data, and your AI permission — and
-removes your sign-in after cloud deletion succeeds. If deletion fails or is interrupted, the app keeps your local journey and tells you to retry. Some cloud records may already have been removed; retrying finishes the remaining cleanup.</p>
+removes your sign-in after cloud deletion succeeds. If deletion fails or is interrupted, the app keeps your local journey and tells you to retry. Some cloud records may already have been removed. Retry the deletion; if you can no longer sign in or the error continues, contact privacy@tortubuild.com so we can complete the cleanup.</p>
 <p>Starting again afterwards starts you from nothing: a new account is a new account, and no
 manifest, profile picture, birth date, preference, or progress from the deleted one comes back —
 except for the limited safety and allowance records described next.</p>
@@ -365,10 +365,14 @@ cannot be refilled by reinstalling or signing in elsewhere. Those account marker
 you wrote and nothing Luna said, are never shown to anyone, and are deleted with the account. We
 keep the device's local same-day count after account deletion so deleting one account and making
 another on the same device cannot refill the day's free allowance. If a birth-date answer previously indicated an age below 13, the device also retains that restriction across ordinary date edits and account deletion; it does not retain the rejected birth date for this purpose.</p>
-<p>During account deletion, we create a security record containing the account identifier and
-an expiry target, without your writing. It blocks in-flight requests from recreating deleted
-data. The target is two hours, but automatic cleanup of this marker is not currently enabled,
-so the record may remain longer pending operational cleanup.</p>
+<p>When account deletion starts, we create a small security record associated with the account
+identifier, containing deletion status and timing information, without your writing. It blocks
+writes from existing sessions and in-flight requests from recreating deleted data. While cleanup
+is incomplete, the record has no automatic expiry and remains until deletion can be retried or
+completed through support. Only after account-data cleanup and deletion of the sign-in account
+succeed do we set the record to expire two hours later. Firestore then removes it automatically
+through its time-to-live (TTL) process. Removal is asynchronous, usually within 24 hours after
+expiry; this is not a promise of deletion at an exact time.</p>
 <p>Small installation-only flags may also remain, including whether a TikTok installation event
 has already been recorded in an enabled version. These prevent duplicate installation events;
 they do not contain your writing or restore the deleted journey. Advertising permission is
