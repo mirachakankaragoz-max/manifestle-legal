@@ -64,8 +64,9 @@ uygulamanın davranışı çelişiyorsa bunu bir hata olarak kabul et ve
       uygulamayı yeniden kurarak veya başka bir yerde giriş yaparak günlük hakların yenilenmesini
       önler.</li>
   <li><strong>Rüya Günlüğü için hesap gerekir.</strong> Kaydettiğin rüyalar bağlı yolculuğunla
-      birlikte özel olarak yedeklenir. Bir rüya OpenAI'a yalnızca Luna'dan o rüyayı okumasını
-      istediğinde ve yapay zekâ izni verdiğinde gönderilir.</li>
+      birlikte özel olarak yedeklenir. Yapay zekâ izninle, Luna’dan rüyayı okumasını istediğinde
+      veya o rüyanın kayıtlı yorum sohbetinde takip mesajı gönderdiğinde rüya metni OpenAI’a gönderilir;
+      ikinci durumda kayıtlı yorum da eklenir.</li>
   <li><strong>Ay Madalyonu için de hesap gerekir ve yazdıklarından hiçbiri gönderilmez.</strong>
       Ay Madalyonunu açmak Luna'dan bir cümle ister; istek tarihi, uygulama dilini, günlük mesajı mı yoksa ek
       mesajı mı açtığını ve seçtiğin Luna karakterini taşır. Yazdığın hiçbir şeyi ve burcunu içermez.</li>
@@ -113,13 +114,12 @@ Yerel Yolculuk verilerini Manifestle bulutundan geri yükleyebilir.</p>
 verecekken veya bir yapay zekâ özelliği OpenAI'a ilk kez veri gönderecekken senden açıkça izin
 ister. Sen izin vermeden bu bölümde açıklanan verilerin hiçbirini OpenAI'a göndermez. İznini
 istediğin zaman <em>Ayarlar → Luna'nın Yapay Zekâ Cevapları</em> bölümünden geri alabilirsin;
-uygulama yeni yapay zekâ isteklerini anında durdurur.</p>
+uygulama yeni yapay zekâ isteklerini durdurur. Daha önce gönderilmiş istekler geri alınamaz.</p>
 
-<p>İzin verdiğinde her cevap için şunlar kendi sunucumuza, oradan da OpenAI API'ye
-iletilir:</p>
+<p>Normal bir manifest sohbetinde izin verdikten sonra, yanıt için aşağıdakiler kendi sunucumuza, oradan da OpenAI API'ye iletilir:</p>
 <ul>
   <li>Az önce yazdığın mesaj.</li>
-  <li>Luna'nın o konuşmada senin için sakladığı niyetten bir kesit.</li>
+  <li>O konuşmadaki manifest niyetinden bir kesit. Yorum üzerine sohbetlere ilgisiz bir manifestin niyeti eklenmez.</li>
   <li>O konuşmanın en fazla son 10 mesajı; her mesaj için uzunluk sınırı uygulanır.</li>
   <li>Manifestle Plus'ı etkin bağlı hesaplarda, varsa Luna'nın önceki sohbetlerden oluşan kısa hafızası.</li>
   <li>Uygulama dilin ve seçtiğin Luna karakteri.</li>
@@ -132,14 +132,14 @@ tanıları veya geçici ruh hâllerini çıkarmaması ya da saklamaması talimat
 Firebase'de hesabının altında özel olarak saklanır, yalnızca Plus etkinken gelecekteki Luna
 sohbetlerine dahil edilir ve Ortak Manifest arkadaşlarına hiçbir zaman gösterilmez. Plus sona
 ererse hafıza duraklatılır; yine de <em>Ayarlar → Luna'nın Hafızası</em> bölümünden görebilir veya
-temizleyebilirsin.</p>
+temizleyebilirsin. Yorum üzerine sohbetler uygun mevcut hafızayı kullanabilir; ancak o yorumdan veya konuşmadan hafızayı güncellemez.</p>
 <p>Luna'nın <strong>kristal küredeki burç yorumları</strong> da aynı şekilde ve aynı izinle yazılır. Bir burç yorumu
-açtığında yalnızca burcun, yorumun günlük mü haftalık mı olduğu, hangi takvim gününe ait olduğu,
-uygulama dilin ve seçtiğin Luna karakteri gönderilir. Doğum tarihin hiçbir zaman gönderilmez —
-yalnızca burcun gönderilir — ve hiçbir manifest, mesaj ya da check-in bunlara dahil edilmez.</p>
+için yeni bir istek gönderdiğinde burcun, yorumun günlük mü haftalık mı olduğu, hangi takvim gününe ait olduğu,
+uygulama dilin ve seçtiğin Luna karakteri gönderilir. Bu ilk yorum isteğine kayıtlı doğum tarihin
+ve hiçbir manifest, mesaj ya da check-in eklenmez.</p>
 <p>Luna'nın <strong>rüya yorumları</strong> da aynı şekilde, aynı izinle ve yalnızca sen ondan
 belirli bir rüyayı okumasını istediğinde yazılır. Bir rüyayı kaydetmek onu bağlı hesabına
-yedekler; tek başına OpenAI'a göndermez. Okumasını istediğinde yalnızca o tek rüyanın metni, hangi takvim gününde yazıldığı,
+yedekler; tek başına OpenAI'a göndermez. Okumasını istediğinde yalnızca o tek rüyanın metni, rüyanın ait olduğu takvim günü,
 uygulama dilin ve seçtiğin Luna karakteri gönderilir. Başka hiçbir rüya ve hiçbir manifest, mesaj
 ya da check-in bunlara dahil edilmez. Rüya metni önce OpenAI tarafından güvenlik açısından
 değerlendirilir; yorum uygun bulunduğunda ek bir OpenAI isteğiyle oluşturulur. Uygulama bunun
@@ -152,14 +152,13 @@ hiçbiri dahil edilmez — ne bir manifest, ne bir mesaj, ne bir check-in, ne de
 küredeki burç yorumundan farklı olarak burcun bile gönderilmez. Luna'nın yazdığı mesaj
 o gün için cihazında ve aşağıda açıklanan geçici sunucu tekrar deneme/kurtarma kaydında tutulur;
 yolculuk yedeğinin bir parçası olarak eşitlenmez.</p>
-<p>Hesabındaki adını, e-posta adresini veya kayıtlı doğum tarihini OpenAI isteklerine
-<strong>otomatik olarak eklemeyiz</strong>. Bir mesaja, niyete veya rüyaya yazmayı seçtiğin
-ya da izin verilen Luna Hafızasında yer alan kimlik belirleyici ayrıntılar yukarıdaki
-işlemeye dahil olabilir. İstekler,
+<p><strong>Kayıtlı bir yorum üzerine sohbet.</strong> Kaydedilmiş bir rüya yorumu veya Kristal Küre burç yorumu hakkında Luna’dan yeni bir takip yanıtı istediğinde, kayıtlı okuma da yeni mesajın, o konuşmadaki son mesajlar ve uygun Luna Hafızası ile birlikte gönderilir. Bağlam; başlığı, yorumun tamamını, kapanış cümlesini, okuma türünü ve referansını, ilgili tarihleri ve özgün yorumun dilini içerir. Rüya sohbetine özgün rüya metni ve yorumdaki semboller; burç sohbetine burcun ve günlük veya haftalık dönem bilgisi de eklenir. Özgün yorum son mesajların dışında kalsa bile yapay zekâ işlemesi gerektiren her takip yanıtında aynı kayıtlı kaynak kullanılır. Bir rüya sohbetinin bağlama duyarlı güvenlik değerlendirmesinde OpenAI ayrıca son mesajı, kaynak rüyayı, önceki yorumu ve yakın konuşma geçmişini işleyebilir.</p>
+<p>Okuma sohbetini ve yerleşik ilk selamlamasını oluşturmak yerel bir işlemdir; cihazda kayıtlı bir yorumu görmek tek başına yeni bir yorum üretmez. Takip mesajını göndermek veya yeniden denemek için güncel yapay zekâ izni gerekir. Tamamlanmış bir yanıt kurtarılırken yeni bir OpenAI üretimi yerine kayıtlı sonuç dönebilir.</p>
+
+<p>Giriş sağlayıcındaki adını, e-posta adresini veya kayıtlı doğum tarihini OpenAI isteklerine <strong>ayrı profil alanları olarak eklemeyiz</strong>. Yakın konuşma geçmişindeki yerel bir selamlama Manifestle kullanıcı adını içerebilir; bu nedenle kullanıcı adın, o konuşmada kendin yazmasan da OpenAI’a ulaşabilir. Mesajlarında, niyetinde, rüyanda, kayıtlı yorumunda veya izin verilen Luna Hafızası’nda yer alan kimlik belirleyici ayrıntılar da işlenebilir. İstekler,
 kötüye kullanım sınırlarını ve bağlı hesaba ait günlük hakları uygulayabilmemiz için kimlik
 doğrulamalıdır. Sunucumuz ayrıca kötüye kullanımın önlenmesi için hesap kimliğinden türetilen tek
-yönlü, takma adlı bir özeti OpenAI'a gönderir; bu özet Luna'nın istemine dahil edilmez ve OpenAI
-tarafından Firebase hesap kimliğini geri elde etmek için kullanılamaz.</p>
+yönlü, takma adlı bir özeti OpenAI'a gönderir; bu özet Luna'nın istemine dahil edilmez ve özgün Firebase hesap kimliği bu alanda gönderilmez.</p>
 
 <p><strong>Seçimin ve hukuki sebep.</strong> Bu bölümdeki yapay zekâ işlemesi için — serbest metne
 yazmayı seçtiğin özel nitelikli bilgiler dahil — Manifestle açık rızana dayanır. <em>Luna'nın
@@ -202,15 +201,18 @@ hesap kimliğin altında şunları saklarız:</p>
   <tr><td>Manifestlerin ve Luna ile tüm konuşmaları</td><td>Yeni ya da yeniden kurulan bir cihazda yolculuğunu geri getirmek</td></tr>
   <tr><td>Günlük check-in'lerin (tarih, ruh hâli, not, Luna'nın cevabı)</td><td>Serini ve Luna'nın ilerlemesini geri getirmek</td></tr>
   <tr><td>Rüya günlüğün: yazdığın rüyalar ve Luna'nın her biri için yaptığı yorum</td><td>Cihazını değiştirdiğinde ya da kaybettiğinde rüyalarının sende kalması için. Yolculuğunla birlikte gizli tutulur ve Ortak Manifest'teki arkadaşların dahil kimseye gösterilmez</td></tr>
+  <tr><td>Kayıtlı okuma sohbetleri: kaynak rüya veya burç yorumu, yorumu ve üst verileri ile takip mesajları</td><td>Aynı özel konuşmayı ve özgün bağlamını cihazlar arasında geri yüklemek. Ortak Manifest arkadaşlarıyla paylaşılmaz</td></tr>
   <tr><td>Luna profili: evre, bağ, kilometre taşları, görünüm, hatırlatıcı saati, görünüm ve dil tercihleri</td><td>Luna'yı cihazlar arasında aynı tutmak</td></tr>
   <tr><td>Luna'nın Hafızası: Luna sohbetlerinden yararlı ayrıntıları içeren kısa bir küme</td><td>Bağlı Plus hesaplarında sohbetler arasında devamlılık sağlamak. Özeldir, Ayarlar'dan görülebilir veya temizlenebilir ve yalnızca 3. bölümde açıklanan Luna sohbeti ile hafıza güncelleme işlemleri için OpenAI'a gönderilir</td></tr>
-  <tr><td>Doğum tarihin</td><td>Bir hesap bağladığında, başka bir cihazda geri gelebilmesi için özel yolculuğunla birlikte saklanır. Ortak Manifest arkadaşlarına gösterilmez ve OpenAI'a hiç gönderilmez.</td></tr>
-  <tr><td>Burcun</td><td>Doğum tarihinden çıkarılan burç. Kabul edilmiş Ortak Manifest arkadaşların bunu avatarının yanında görebilir. OpenAI'a yalnızca kristal küreden bir burç yorumu açtığında gönderilir (3. bölüm). Sohbet, rüya yorumu ve Ay Madalyonu, sen mesaja kendin yazmadıkça burcu içermez.</td></tr>
+  <tr><td>Doğum tarihin</td><td>Bir hesap bağladığında, başka bir cihazda geri gelebilmesi için özel yolculuğunla birlikte saklanır. Ortak Manifest arkadaşlarına gösterilmez ve profilinden OpenAI isteklerine otomatik eklenmez. 3. bölümde açıklanan içerikte yer alan kişisel ayrıntılar yine de işlenebilir.</td></tr>
+  <tr><td>Burcun</td><td>Doğum tarihinden çıkarılan burç. Kabul edilmiş Ortak Manifest arkadaşların bunu avatarının yanında görebilir. Kristal Küre burç yorumu üretilirken ve o kayıtlı burç yorumu üzerine sohbetlerde OpenAI'a gönderilir (3. bölüm). Burcun, paylaştığın yazılarda veya uygun Luna Hafızası’nda da yer alabilir. Diğer istekler profilindeki burç alanını otomatik eklemez.</td></tr>
   <tr><td>Takvim günü ile o gün kullandığın Kristal Küre, rüya yorumu ve Ay Madalyonu hakları</td><td>Bağlı hesabın kalan haklarını çıkış, yeniden kurulum veya başka bir cihazda giriş sonrasında tutarlı kılmak için. Bu özel işaretler hiçbir manifest, mesaj, rüya, burç yorumu, rüya yorumu ya da Ay Madalyonu mesajı içermez ve arkadaşlarına gösterilmez</td></tr>
-  <tr><td>Kullanıcı adı, seçtiğin avatar, seçtiğin Luna karakteri</td><td>Ortak Manifest için kimlik</td></tr>
+  <tr><td>Kullanıcı adı, seçtiğin avatar, seçtiğin Luna karakteri</td><td>Ortak Manifest için kimlik ve Luna’yı kişiselleştirmek. Kayıtlı selamlamadaki kullanıcı adı, 3. bölümde açıklandığı gibi yapay zekâ sohbet geçmişine dahil olabilir</td></tr>
   <tr><td>Bildirim jetonu</td><td>Ortak Manifest ve hatırlatıcı bildirimlerini iletmek</td></tr>
   <tr><td>Ortak Manifest içeriği: paylaşılan yolculuklar, tarih aralıkları, oradaki günlük girişlerin ve notların</td><td>Paylaştığın arkadaşına ortak yolculuğu göstermek</td></tr>
 </table>
+
+<p>Kayıtlı bir okuma sohbeti kendi kaynak kopyasını tutar. Özgün rüyayı düzenlemek veya silmek ya da bir yorumun günlük önbelleğini kaldırmak, o konuşmanın kopyasını otomatik olarak değiştirmez veya silmez. Kayıtlı konuşmayı ve kaynağını kaldırmak için kütüphanenden o konuşmayı veya hesabını sil. Geçici sunucu yanıt/kurtarma kayıtları ile sınırlı olarak saklanan moderasyon kayıtları, 3. ve 9. bölümlerde açıklanan ayrı saklama sürelerine tabidir.</p>
 
 <p>Ay Madalyonu mesajı yolculuk yedeğinin parçası değildir. Cihazındaki günlük kopyasına ek
 olarak sunucu, 3. bölümde açıklanan tekrar deneme/kurtarma amacıyla geçici bir cevap saklar.

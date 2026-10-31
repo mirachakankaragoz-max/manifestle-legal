@@ -64,8 +64,8 @@ data described in this policy. You can contact the controller at
       you wrote and no horoscope, dream interpretation, or Moon Locket message Luna generated. They prevent today's
       allowances from being restored by logging out, reinstalling, or signing in elsewhere.</li>
   <li><strong>The Dream Journal needs an account.</strong> Saved dreams are backed up privately
-      with your linked journey. A dream is sent to OpenAI only when you ask Luna to read that
-      particular one and have granted AI permission.</li>
+      with your linked journey. With AI permission, its text is sent to OpenAI when you ask Luna to read it
+      or send a follow-up in its saved reading conversation; the latter also includes the saved interpretation.</li>
   <li><strong>Moon Locket needs an account too, and sends nothing you have written.</strong>
       Opening your locket asks Luna for a message; the request carries the date, your app language, whether
       you are opening the daily or bonus message, and the Luna persona you chose. It does not include anything you
@@ -113,15 +113,14 @@ described in section 4 from Manifestle's cloud.</p>
 
 <h2>3. Luna's AI replies</h2>
 <p>Luna's replies are written using the <strong>OpenAI API</strong>. Manifestle asks for your explicit
-permission the first time an AI feature would send data to OpenAI. Until you grant it, Manifestle
+permission before an AI feature sends data to OpenAI under the current disclosure. Until you grant it, Manifestle
 does not send any of the data described in this section to OpenAI. You can withdraw permission at
-any time in <em>Settings → Luna's AI Replies</em>; the app stops new AI requests immediately.</p>
+any time in <em>Settings → Luna's AI Replies</em>. The app stops new AI requests; requests already sent cannot be recalled.</p>
 
-<p>When permission is granted, each reply sends the following to our own server, which relays it
-to the OpenAI API:</p>
+<p>For an ordinary manifest conversation, after permission is granted, the following is sent to our own server and relayed to the OpenAI API for the reply:</p>
 <ul>
   <li>The message you just wrote.</li>
-  <li>An excerpt of the intention Luna is holding for that conversation.</li>
+  <li>An excerpt of that conversation’s manifest intention. An unrelated manifest intention is not added to a reading follow-up.</li>
   <li>Up to the last 10 messages of that conversation, with per-message length limits.</li>
   <li>For a linked account with active Manifestle Plus, Luna's compact memory from earlier
       conversations, if one exists.</li>
@@ -134,33 +133,33 @@ the model not to infer or retain sensitive traits, credentials, precise location
 diagnoses, or transient moods. The resulting memory is stored privately in Firebase under your
 account, is included only in future Luna chats while Plus is active, and is never visible to Shared
 Manifest friends. If Plus expires, the memory is paused but remains available for you to view or
-clear in <em>Settings → Luna's Memory</em>.</p>
+clear in <em>Settings → Luna's Memory</em>. Reading follow-up chats can use existing eligible memory, but do not update it from that reading or conversation.</p>
 <p>Luna's <strong>horoscopes from the crystal ball</strong> are written the same way, under the same
-permission. Opening a horoscope sends only your zodiac sign, whether the horoscope is daily or weekly,
-the calendar date it is for, your app language, and the Luna persona you chose. Your birth date
-itself is never sent — only the sign — and no manifest, message, or check-in is included.</p>
+permission. Requesting a new horoscope sends your zodiac sign, whether the horoscope is daily or weekly,
+the calendar date it is for, your app language, and the Luna persona you chose. This initial reading
+request does not attach your saved birth date or any manifest, message, or check-in.</p>
 <p>Luna's <strong>dream interpretations</strong> are written the same way, under the same
 permission, and only when you ask her to read a specific dream. Saving a dream backs it up to
 your linked account but does not by itself send it to OpenAI. When you ask her to read one, we send the text of that single dream, the
-calendar date it was written on, your app language, and the Luna persona you chose. No other
+calendar day associated with that dream, your app language, and the Luna persona you chose. No other
 dream, and no manifest, message, or check-in, is included. The dream text is first assessed by
 OpenAI for safety; when interpretation is appropriate, a further OpenAI request generates it.
 The app may instead provide clarification or support guidance. This assessment is automated
 and may make mistakes.</p>
 <p>Luna's <strong>Moon Locket messages</strong> are written the same way, under the same permission.
-Opening your locket sends the least of anything in this section: the calendar date the message is for,
+Requesting a new locket message sends the calendar date the message is for,
 your app language, whether you are opening the daily or bonus message, and the Luna persona you chose.
 Nothing you have written is included — no manifest, message, check-in, or dream — and unlike a
 horoscope from the crystal ball, not even your zodiac sign. The message Luna writes back is kept
 locally for that day and in a temporary server retry/recovery record described below; it is not
 synced as part of your journey backup.</p>
-<p>We do <strong>not</strong> automatically add your account name, email address, or saved birth
-date to OpenAI requests. Identifying details you choose to write in a message, intention, or
-dream, or that appear in permitted Luna Memory, can be included in the processing above. Requests
+<p><strong>Talking about a saved reading.</strong> When you ask Luna for a new follow-up reply about a saved dream interpretation or Crystal Ball horoscope, the saved reading is included alongside your new message, recent messages in that conversation, and eligible Luna Memory. Its context includes the title, full interpretation, closing line, reading type and reference, associated dates, and the language of the original reading. A dream conversation also includes the original dream text and the symbols in its interpretation; a horoscope conversation includes the zodiac sign and daily or weekly period. The same saved source accompanies each follow-up that needs AI processing, even when the original reading is no longer in the recent-message window. For a contextual safety assessment of a dream follow-up, OpenAI may also process the latest message, source dream, previous interpretation, and recent conversation history.</p>
+<p>Creating a reading conversation and its built-in first greeting is local; viewing a locally saved reading does not by itself generate another interpretation. Sending or retrying a follow-up requires current AI permission. Recovering an already completed answer can return the saved result without another OpenAI generation.</p>
+
+<p>We do <strong>not</strong> add your identity-provider name, email address, or saved birth date as separate profile fields in OpenAI requests. A locally created greeting in recent conversation history can include your Manifestle username, so that username can reach OpenAI even if you did not type it in that conversation. Identifying details in your messages, intention, dream, saved reading, or permitted Luna Memory can also be processed. Requests
 are authenticated so we can enforce abuse limits and linked-account daily allowances. Our server
 also sends OpenAI a one-way, pseudonymous hash derived from your account identifier for abuse
-prevention; it is not included in Luna's prompt and cannot be used by OpenAI to recover your
-Firebase account identifier.</p>
+prevention; it is not included in Luna's prompt, and the original Firebase account identifier is not sent in that field.</p>
 
 <p><strong>Your choice and legal basis.</strong> For the AI processing described in this section,
 including any sensitive information you choose to put in free text, Manifestle relies on your
@@ -202,15 +201,18 @@ account, we store the following under your account identifier:</p>
   <tr><td>Your manifests, including their full conversations with Luna</td><td>Restore your journey on a new or reinstalled device</td></tr>
   <tr><td>Your daily check-ins (date, mood, note, Luna's reply)</td><td>Restore your streak and Luna's progress</td></tr>
   <tr><td>Your dream journal: the dreams you write and Luna's interpretation of each one</td><td>Keep your dreams if you change or lose your device. Stored privately with your journey and never shown to anyone else, including friends in Shared Manifest</td></tr>
+  <tr><td>Saved reading conversations: the source dream or horoscope, its interpretation and metadata, and follow-up messages</td><td>Restore the same private conversation and its original context across devices. These are not shared with Shared Manifest friends</td></tr>
   <tr><td>Luna profile: stage, bond, milestones, appearance, reminder time, appearance and language preferences</td><td>Keep Luna the same across devices</td></tr>
   <tr><td>Luna Memory: a compact set of useful details from your Luna conversations</td><td>Give linked Plus accounts continuity across conversations. It is private, can be viewed or cleared in Settings, and is sent to OpenAI only for the Luna chat and memory-update processing described in section 3</td></tr>
-  <tr><td>Your birth date</td><td>When you link an account, it is stored with your private journey so it can be restored on another device. It is never shown to Shared Manifest friends and never sent to OpenAI.</td></tr>
-  <tr><td>Your zodiac sign</td><td>The sign derived from your birth date. Accepted Shared Manifest friends can see it beside your avatar. It is sent to OpenAI only when you open a horoscope in the crystal ball (section 3). Chat, dream interpretations, and Moon Locket messages do not include it unless you type it into a message yourself.</td></tr>
+  <tr><td>Your birth date</td><td>When you link an account, it is stored with your private journey so it can be restored on another device. It is not shown to Shared Manifest friends or automatically added from your profile to OpenAI requests. Personal details included in the content described in section 3 can still be processed.</td></tr>
+  <tr><td>Your zodiac sign</td><td>The sign derived from your birth date. Accepted Shared Manifest friends can see it beside your avatar. It is sent to OpenAI when generating a Crystal Ball horoscope and in follow-up chats about that saved horoscope (section 3). Your sign can also appear in writing or eligible Luna Memory you share. Other requests do not automatically add the zodiac field from your profile.</td></tr>
   <tr><td>The calendar day and which Crystal Ball, dream-interpretation, and Moon Locket allowances you have used that day</td><td>Keep a linked account's remaining allowances consistent after logout, reinstall, or sign-in on another device. These private markers contain no manifest, message, dream, horoscope, dream interpretation, or Moon Locket message and are never shown to friends</td></tr>
-  <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest</td></tr>
+  <tr><td>Username, chosen avatar, chosen Luna persona</td><td>Identity for Shared Manifest and personalization of Luna. A username in a saved greeting can be included in AI chat history as explained in section 3</td></tr>
   <tr><td>Notification token</td><td>Deliver Shared Manifest and reminder notifications</td></tr>
   <tr><td>Shared Manifest content: shared journeys, their date ranges, and your daily entries and notes in them</td><td>Show the shared journey to the friend you share it with</td></tr>
 </table>
+
+<p>A saved reading conversation keeps its own source snapshot. Editing or deleting the original dream or removing a reading’s daily cache does not automatically change or delete that conversation copy. Delete the conversation from your library, or delete your account, to remove that saved conversation and its source. The temporary server reply/recovery records and limited retained moderation records have the separate lifetimes described in sections 3 and 9.</p>
 
 <p>Moon Locket message text is not part of your journey backup. Besides its local daily copy,
 the server retains a temporary answer for retry/recovery as described in section 3. The separate
