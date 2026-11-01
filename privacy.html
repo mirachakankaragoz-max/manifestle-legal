@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 31 October 2026</p>
+<p class="updated">Last updated: 1 November 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, keep a dream journal, and open your Moon Locket. This policy describes exactly what
@@ -70,9 +70,8 @@ data described in this policy. You can contact the controller at
       Opening your locket asks Luna for a message; the request carries the date, your app language, whether
       you are opening the daily or bonus message, and the Luna persona you chose. It does not include anything you
       wrote, and it does not include your zodiac sign.</li>
-  <li>Some versions include optional Meta and TikTok advertising-measurement SDKs. They remain
-      inactive unless measurement is available in that version and you grant the separate
-      advertising permission described in section 6. Your private writing is not an advertising payload.</li>
+  <li>We do not send app activity to Meta or TikTok for advertising measurement. We do not use
+      your private writing for advertising or profiling.</li>
   <li>You can delete your account and its journey data from inside the app. <a href="#account-deletion">Section 9</a> explains
       the limited security, moderation, and device records that remain.</li>
 </ul>
@@ -220,8 +219,7 @@ used-or-unused allowance marker above contains no message text.</p>
 
 <p>Your subscription and permanent-purchase entitlements are determined on your device by
 Apple's StoreKit on iOS or Google Play Billing on Android. We do not receive your payment-card
-details. If advertising measurement is enabled and permitted, limited purchase-event information
-may be shared as described in section 6.</p>
+details.</p>
 
 <p>The app tells you all of this on the screen where you link an account, before you link.</p>
 
@@ -241,53 +239,12 @@ removing content and terminating accounts.</p>
 
 <p>You can report a Luna response from its message menu or a reading’s options menu. When you choose Send Report, we collect the selected response (up to 20,000 characters), the feature it came from, your account or guest identifier, report reason, optional explanation, platform, and report time. We store the report in Firebase and send its selected response and explanation to our support mailbox for moderation. We do not automatically attach your other messages or original dream, and reporting does not send a new request to OpenAI or spend an AI allowance.</p>
 
-<h2>6. Optional advertising measurement and limits</h2>
-<p><strong>Current availability.</strong> Meta and TikTok advertising measurement is currently
-disabled in Manifestle. Including an SDK in a build does not activate it. The following explains
-the optional processing in versions where measurement is enabled.</p>
-<p>Where available, <em>Advertising measurement</em> lets you choose whether Manifestle sends
-limited app events to <strong>Meta and TikTok</strong> to measure our campaigns and help those
-platforms find people interested in Manifestle. Each provider must also be enabled and configured
-in that version. The choice starts off. It is separate from
-Luna's AI permission, and declining it does not restrict app features. Versions without enabled
-measurement do not initialize these advertising SDKs.</p>
-<p>The events describe an app installation or opening, a successfully sealed intention, the first
-check-in, viewing the Plus screen, or an initial Plus purchase. Purchase events may include the
-product identifier, price and currency; they do not include payment-card information. SDKs may
-also transmit event times, app/SDK and operating-system versions, device and installation
-identifiers, IP/network information, locale/time-zone information and SDK diagnostics.
-Providers can also infer a general region from network or locale information; Manifestle does not
-request precise device location for this measurement. These records are not necessarily
-anonymous: the platforms may link them to information they hold for advertising measurement and
-optimization. We do not provide your Firebase account ID, name, email, birth date, mood, intention
-text, chat, notes, dream text or generated readings as advertising-event parameters.</p>
-<p>Manifestle disables automatic page-content and form-field collection for advertising.
-The TikTok SDK used by Manifestle is a reviewed local variant with its screen-image capture,
-storage and upload mechanism removed. Advertising events do not contain screenshots, your
-private text, or recordings from your microphone or camera.</p>
-<p><strong>iOS.</strong> Direct event sharing with these platforms additionally requires permission
-in Apple's App Tracking Transparency prompt. TikTok's SDK may access the advertising identifier
-when that system permission is granted; Manifestle disables Meta's IDFA collection. If you grant
-Manifestle's advertising permission but decline Apple's tracking prompt, Manifestle uses only
-Apple's privacy-preserving SKAdNetwork conversion reporting for this measurement. Apple's
-postbacks are handled through its attribution system rather than a user-level event stream from
-Manifestle to an advertising platform.</p>
-<p><strong>Android.</strong> Manifestle disables advertising-ID collection in both SDK configurations
-and removes their advertising-ID permissions. Limited device/installation identifiers and
-app-event information can still be shared after your advertising permission; disabling the
-advertising ID does not make that sharing anonymous.</p>
-<p>Where the feature is available, you can withdraw this permission in
-<em>Settings → Advertising measurement</em>. The app stops
-new business-event submissions and disables TikTok event transmission; requests already submitted
-cannot be recalled. SDKs may retain pending records for delivery and the providers may retain data
-already received under their applicable terms and privacy policies. Deleting a Manifestle account
-does not automatically erase records already held independently by an advertising platform.
-Contact <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> for help exercising your
-data rights. We do not promise a fixed retention period for data controlled by those providers.</p>
+<h2>6. Advertising and profiling</h2>
+<p>The current iOS and Android builds do not include Meta or TikTok SDKs and do not send
+advertising-measurement events to these platforms.</p>
 <ul>
-  <li>We do not rent personal data or sell it for money. Optional advertising data sharing is
-      described above; applicable privacy laws may treat advertising disclosures as sharing.</li>
-  <li>We do not use your journal content for advertising or profiling.</li>
+  <li>We do not rent personal data or sell it for money.</li>
+  <li>We do not use your private writing for advertising or profiling.</li>
 </ul>
 
 <h2>7. Service providers</h2>
@@ -300,12 +257,7 @@ data rights. We do not promise a fixed retention period for data controlled by t
       version and whether it was a debug or release build, the device model and Android version, and
       an identifier Crashlytics generates for the installation. It does not send your manifests,
       messages, check-ins, dreams, birth date, name, email, or account id. The iOS app does not use
-      Firebase Crashlytics; enabled advertising SDKs may send their own SDK diagnostics as described
-      in section 6.</li>
-  <li><strong>Meta and TikTok</strong> — optional advertising measurement described in section 6,
-      governed by their applicable business-product terms and privacy policies:
-      <a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy</a> and
-      <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en">TikTok Privacy Policy</a>.</li>
+      Firebase Crashlytics.</li>
   <li><strong>OpenAI API</strong> — generating Luna's replies and updating Luna Memory, as described in section 3.</li>
   <li><strong>Apple</strong> — Sign in with Apple, push notification delivery, and App Store
       purchases on iOS.</li>
@@ -321,9 +273,6 @@ data rights. We do not promise a fixed retention period for data controlled by t
 <ul>
   <li><strong>Consent</strong> for sending the section 3 data to OpenAI and generating the AI
       feature you request.</li>
-  <li><strong>Separate advertising consent</strong> for the optional section 6 measurement,
-      with additional system permission on iOS. Neither advertising nor AI permission is a
-      condition of using the other features.</li>
   <li><strong>Performance of our agreement with you</strong> for providing the app, authenticating
       an account, syncing the cloud data you choose to keep, restoring it, and processing
       purchases.</li>
@@ -333,13 +282,12 @@ data rights. We do not promise a fixed retention period for data controlled by t
   <li><strong>Legal obligations and legal claims</strong> where we must keep or disclose limited
       information under applicable law.</li>
 </ul>
-<p>Firebase, OpenAI, Apple, Google, and, when advertising measurement is enabled, Meta and TikTok
-may process personal data outside your country, including
+<p>Firebase, OpenAI, Apple, and Google may process personal data outside your country, including
 outside Türkiye and the European Economic Area. OpenAI processes API customer data on our behalf
 under its Data Processing Addendum. For transfers covered by European or UK data-protection law,
 that addendum incorporates the applicable Standard Contractual Clauses or UK addendum. Transfers
 from Türkiye are also subject to Article 9 of the Turkish Personal Data Protection Law and its
-required transfer safeguards. Your in-app AI or advertising choice does not waive those rights or replace any
+required transfer safeguards. Your in-app AI choice does not waive those rights or replace any
 contractual or regulatory safeguard that the law requires.</p>
 <p>You may ask us for information about the safeguards relevant to you at
 <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a>.</p>
@@ -377,10 +325,6 @@ completed through support. Only after account-data cleanup and deletion of the s
 succeed do we set the record to expire two hours later. Firestore then removes it automatically
 through its time-to-live (TTL) process. Removal is asynchronous, usually within 24 hours after
 expiry; this is not a promise of deletion at an exact time.</p>
-<p>Small installation-only flags may also remain, including whether a TikTok installation event
-has already been recorded in an enabled version. These prevent duplicate installation events;
-they do not contain your writing or restore the deleted journey. Advertising permission is
-cleared when you leave the account.</p>
 <p><strong>What we keep.</strong> If you reported someone's content or a Luna response to us, that report — including
 the fact that you filed it — is kept after your account is deleted, because we need it to act on
 abuse and to show we did. Anything a friend independently holds, such as a shared journey you both

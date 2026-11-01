@@ -32,7 +32,7 @@
 <body>
 
 <h1>Manifestle Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 31 Ekim 2026</p>
+<p class="updated">Son güncelleme: 1 Kasım 2026</p>
 
 <p>Manifestle özel bir ritüel uygulamasıdır: niyetlerini mühürler, Luna ile konuşur, günlük
 check-in'lerini kaydeder, bir rüya günlüğü tutar ve Ay Madalyonunu açarsın. Bu politika, hangi verinin cihazında
@@ -70,9 +70,8 @@ uygulamanın davranışı çelişiyorsa bunu bir hata olarak kabul et ve
   <li><strong>Ay Madalyonu için de hesap gerekir ve yazdıklarından hiçbiri gönderilmez.</strong>
       Ay Madalyonunu açmak Luna'dan bir cümle ister; istek tarihi, uygulama dilini, günlük mesajı mı yoksa ek
       mesajı mı açtığını ve seçtiğin Luna karakterini taşır. Yazdığın hiçbir şeyi ve burcunu içermez.</li>
-  <li>Bazı sürümler isteğe bağlı Meta ve TikTok reklam ölçüm SDK'larını içerir. Bu SDK'lar,
-      kullandığın sürümde ölçüm kullanıma açılmadıkça ve 6. bölümdeki ayrı reklam iznini
-      vermedikçe etkinleşmez. Özel yazıların reklam olaylarının içeriği değildir.</li>
+  <li>Uygulama etkinliğini reklam ölçümü için Meta veya TikTok'a göndermeyiz. Özel yazılarını
+      reklam ya da profilleme için kullanmayız.</li>
   <li>Hesabını ve yolculuk verilerini uygulama içinden silebilirsin. Kalan sınırlı güvenlik,
       içerik bildirimi ve cihaz kayıtları <a href="#account-deletion">9. bölümde</a> açıklanır.</li>
 </ul>
@@ -219,8 +218,7 @@ olarak sunucu, 3. bölümde açıklanan tekrar deneme/kurtarma amacıyla geçici
 Yukarıdaki ayrı kullanıldı-kullanılmadı işareti mesaj metni içermez.</p>
 
 <p>Abonelik ve kalıcı satın alım hakların cihazında iOS'ta Apple StoreKit, Android'de Google
-Play Billing tarafından belirlenir. Ödeme kartı bilgilerini almayız. Reklam ölçümü etkinse ve
-izin verdiysen 6. bölümde anlatılan sınırlı satın alma olayı bilgileri paylaşılabilir.</p>
+Play Billing tarafından belirlenir. Ödeme kartı bilgilerini almayız.</p>
 
 <p>Uygulama, hesabı bağladığın ekranda, bağlamadan önce bunların tamamını sana anlatır.</p>
 
@@ -239,56 +237,12 @@ kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
 
 <p>Bir Luna yanıtını mesaj menüsünden veya okumanın seçenekler menüsünden bildirebilirsin. Bildirimi Gönder seçeneğini kullandığında seçilen yanıtı (en fazla 20.000 karakter), geldiği özelliği, hesap veya misafir kimliğini, bildirim nedenini, isteğe bağlı açıklamanı, platformu ve bildirim zamanını toplarız. Bildirimi Firebase’de saklar, seçilen yanıtı ve açıklamanı inceleme için destek posta kutumuza iletiriz. Diğer mesajlarını veya özgün rüyanı otomatik olarak eklemeyiz; bildirim yeni bir OpenAI isteği göndermez ve yapay zekâ hakkını tüketmez.</p>
 
-<h2>6. İsteğe bağlı reklam ölçümü ve sınırları</h2>
-<p><strong>Mevcut durum.</strong> Manifestle'da Meta ve TikTok reklam ölçümü şu anda kapalıdır.
-Bir SDK'nın derlemede bulunması onu etkinleştirmez. Aşağıdaki açıklama, ölçümün kullanıma
-açıldığı sürümlerdeki isteğe bağlı işlemleri anlatır.</p>
-<p>Kullanıma açık olduğu sürümlerde <em>Reklam ölçümü</em> tercihi, Manifestle'ın kampanyalarını
-ölçmek ve Manifestle ile ilgilenebilecek kişilere ulaşmak için <strong>Meta ve TikTok</strong>
-ile sınırlı uygulama olayları paylaşmasına izin verip vermeyeceğini belirler. Her sağlayıcının
-ayrıca o sürümde etkinleştirilmiş ve yapılandırılmış olması gerekir. Tercih başlangıçta
-kapalıdır. Luna'nın yapay zekâ izninden ayrıdır; reddetmen uygulama özelliklerini kısıtlamaz.
-Ölçümün etkin olmadığı sürümler bu reklam SDK'larını başlatmaz.</p>
-<p>Olaylar uygulamanın kurulmasını veya açılmasını, bir niyetin başarıyla mühürlenmesini, ilk
-check-in'i, Plus ekranının görüntülenmesini ya da ilk Plus satın alımını belirtir. Satın alma
-olayları ürün kimliğini, fiyatı ve para birimini içerebilir; ödeme kartı bilgilerini içermez.
-SDK'lar ayrıca olay zamanını, uygulama/SDK ve işletim sistemi sürümünü, cihaz ve kurulum
-tanımlayıcılarını, IP/ağ bilgilerini ve SDK tanılama verilerini iletebilir. Bu kayıtlar mutlaka
-anonim değildir: platformlar reklam ölçümü ve optimizasyonu için bunları ellerindeki başka
-bilgilerle ilişkilendirebilir. Firebase hesap kimliğini, adını, e-postanı, doğum tarihini, ruh
-hâlini, niyet metnini, sohbetlerini, notlarını, rüyalarını veya oluşturulan okumaları reklam
-olayı parametresi olarak paylaşmayız.</p>
-<p>Manifestle, reklam ölçümü için otomatik sayfa içeriği ve form alanı toplamayı kapatır.
-Manifestle'ın kullandığı TikTok SDK'sı, ekran görüntüsü alma, saklama ve yükleme mekanizması
-kaldırılmış, incelenmiş bir yerel sürümdür. Reklam olayları ekran görüntülerini, özel metinlerini
-ve mikrofon ya da kamera kayıtlarını içermez.</p>
-<p>Teknik veriler, dil/bölge ve saat dilimi bilgilerini de içerebilir. Sağlayıcılar ağ veya
-bölge bilgilerinden yaklaşık bir bölge çıkarabilir; Manifestle bu ölçüm için cihazın kesin konum
-iznini istemez.</p>
-<p><strong>iOS.</strong> Bu platformlarla doğrudan olay paylaşımı için Apple'ın App Tracking
-Transparency isteminde de izin vermen gerekir. Bu sistem izni verildiğinde TikTok SDK'sı reklam
-tanımlayıcısına erişebilir; Manifestle, Meta'nın IDFA toplamasını kapatır. Manifestle'ın reklam
-iznini verip Apple'ın takip istemini reddedersen bu ölçüm için yalnızca Apple'ın gizliliği
-koruyan SKAdNetwork dönüşüm raporlaması kullanılır. Apple'ın geri bildirimleri, Manifestle'dan
-bir reklam platformuna kullanıcı düzeyinde olay akışı gönderilmesi yerine Apple'ın
-ilişkilendirme sistemi üzerinden işlenir.</p>
-<p><strong>Android.</strong> Manifestle iki SDK'nın yapılandırmasında da reklam kimliği toplamayı
-kapatır ve reklam kimliği izinlerini kaldırır. Reklam izninden sonra sınırlı cihaz/kurulum
-tanımlayıcıları ve uygulama olayları yine paylaşılabilir; reklam kimliğini kapatmak bu paylaşımı
-anonim hâle getirmez.</p>
-<p>Özellik kullanıma açıksa iznini <em>Ayarlar → Reklam ölçümü</em> bölümünden geri alabilirsin. Uygulama yeni uygulama
-olaylarını göndermeyi durdurur ve TikTok olay iletimini kapatır; önceden gönderilmiş istekler
-geri çağrılamaz. SDK'lar iletim için bekleyen kayıtlar saklayabilir; sağlayıcılar da aldıkları
-verileri geçerli koşulları ve gizlilik politikaları kapsamında tutabilir. Manifestle hesabını
-silmek, bir reklam platformunun bağımsız olarak tuttuğu kayıtları otomatik silmez. Veri
-haklarını kullanırken yardım için <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a>
-adresine yazabilirsin. Sağlayıcıların kontrol ettiği veriler için sabit bir saklama süresi
-taahhüt etmeyiz.</p>
+<h2>6. Reklam ve profilleme</h2>
+<p>Güncel iOS ve Android derlemeleri Meta veya TikTok SDK'larını içermez ve bu platformlara
+reklam ölçüm olayları göndermez.</p>
 <ul>
-  <li>Kişisel verileri kiralamayız veya para karşılığında satmayız. İsteğe bağlı reklam verisi
-      paylaşımı yukarıda açıklanmıştır; ilgili gizlilik hukuku reklam amaçlı açıklamaları
-      paylaşım olarak değerlendirebilir.</li>
-  <li>Günlük içeriğini reklam ya da profilleme için kullanmayız.</li>
+  <li>Kişisel verileri kiralamayız veya para karşılığında satmayız.</li>
+  <li>Özel yazılarını reklam ya da profilleme için kullanmayız.</li>
 </ul>
 
 <h2>7. Hizmet sağlayıcılar</h2>
@@ -301,12 +255,7 @@ taahhüt etmeyiz.</p>
       olduğu, uygulama sürümü ve derlemenin hata ayıklama mı yayın mı olduğu, cihaz modeli ve
       Android sürümü, bir de Crashlytics'in o kurulum için ürettiği bir tanımlayıcı.
       Manifestlerini, mesajlarını, check-in'lerini, rüyalarını, doğum tarihini, adını, e-postanı
-      ya da hesap kimliğini göndermez. iOS uygulaması Firebase Crashlytics kullanmaz; etkin
-      reklam SDK'ları 6. bölümdeki SDK tanılama verilerini gönderebilir.</li>
-  <li><strong>Meta ve TikTok</strong> — 6. bölümdeki isteğe bağlı reklam ölçümü; ilgili ticari
-      ürün koşulları ve gizlilik politikaları geçerlidir:
-      <a href="https://www.facebook.com/privacy/policy/">Meta Gizlilik Politikası</a> ve
-      <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en">TikTok Gizlilik Politikası</a>.</li>
+      ya da hesap kimliğini göndermez. iOS uygulaması Firebase Crashlytics kullanmaz.</li>
   <li><strong>OpenAI API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının üretilmesi
       ve Luna'nın Hafızasının güncellenmesi.</li>
   <li><strong>Apple</strong> — Apple ile Giriş Yap, bildirim iletimi ve App Store satın
@@ -322,8 +271,6 @@ taahhüt etmeyiz.</p>
 <ul>
   <li>3. bölümdeki verilerin OpenAI'a gönderilmesi ve istediğin yapay zekâ özelliğinin üretilmesi
       için <strong>açık rıza</strong>.</li>
-  <li>6. bölümdeki isteğe bağlı ölçüm için <strong>ayrı reklam rızası</strong> ve iOS'ta ek sistem
-      izni. Reklam veya yapay zekâ izni, diğer özellikleri kullanmanın koşulu değildir.</li>
   <li>Uygulamayı sunmak, hesap doğrulamak, bulutta tutmayı seçtiğin veriyi eşitlemek ve geri
       yüklemek ve satın alımları işlemek için <strong>sözleşmenin kurulması veya ifası</strong>.</li>
   <li>Ölçülü güvenlik, dolandırıcılık ve kötüye kullanım önleme, günlük hakları uygulama,
@@ -333,13 +280,12 @@ taahhüt etmeyiz.</p>
   <li>Uygulanabilir hukuk gerektirdiğinde sınırlı bilgileri saklamak veya açıklamak için
       <strong>hukuki yükümlülükler ve bir hakkın tesisi, kullanılması veya korunması</strong>.</li>
 </ul>
-<p>Firebase, OpenAI, Apple, Google ve reklam ölçümü etkinleştirildiğinde Meta ve TikTok kişisel
-verileri Türkiye ve Avrupa Ekonomik Alanı dışında
+<p>Firebase, OpenAI, Apple ve Google kişisel verileri Türkiye ve Avrupa Ekonomik Alanı dışında
 olmak üzere yaşadığın ülkenin dışında işleyebilir. OpenAI, API müşteri verilerini kendi Veri İşleme
 Eki kapsamında bizim adımıza işler. Avrupa veya Birleşik Krallık veri koruma hukukuna tabi
 aktarımlarda bu ek, uygulanabilir Standart Sözleşme Maddelerini veya Birleşik Krallık ekini içerir.
 Türkiye'den yapılan aktarımlar ayrıca 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 9. maddesine
-ve zorunlu aktarım güvencelerine tabidir. Uygulamadaki yapay zekâ veya reklam seçimin bu haklarından vazgeçtiğin
+ve zorunlu aktarım güvencelerine tabidir. Uygulamadaki yapay zekâ seçimin bu haklarından vazgeçtiğin
 anlamına gelmez ve kanunun gerektirdiği sözleşmesel ya da düzenleyici güvencenin yerine geçmez.</p>
 <p>Senin için geçerli güvenceler hakkında
 <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> adresinden bilgi isteyebilirsin.</p>
@@ -379,10 +325,6 @@ giriş yapılan hesabın silinmesi başarıyla tamamlandıktan sonra kayda iki s
 süresi veririz. Ardından Firestore, yaşam süresi (TTL) mekanizmasıyla kaydı otomatik kaldırır.
 Kaldırma eşzamansızdır ve genellikle süre dolduktan sonraki 24 saat içinde gerçekleşir;
 bu, tam bir saatte silineceğine dair bir garanti değildir.</p>
-<p>Yalnızca kuruluma ait küçük işaretler de kalabilir; örneğin etkin bir sürümde TikTok kurulum
-olayının daha önce kaydedilip kaydedilmediği. Bunlar yinelenen kurulum olaylarını önler;
-yazdıklarını içermez veya silinen yolculuğu geri getirmez. Hesaptan ayrıldığında reklam iznin
-temizlenir.</p>
 <p><strong>Sakladıklarımız.</strong> Birinin içeriğini veya bir Luna yanıtını bize bildirdiysen, o bildirim — bildirimi
 senin yaptığın bilgisi dahil — hesabın silindikten sonra da saklanır; kötüye kullanıma karşı
 harekete geçebilmek ve geçtiğimizi gösterebilmek için buna ihtiyacımız var. Bir arkadaşının kendi
