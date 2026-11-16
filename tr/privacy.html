@@ -32,7 +32,7 @@
 <body>
 
 <h1>Manifestle Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 4 Kasım 2026</p>
+<p class="updated">Son güncelleme: 16 Kasım 2026</p>
 
 <p>Manifestle özel bir ritüel uygulamasıdır: niyetlerini mühürler, Luna ile konuşur, günlük
 check-in'lerini kaydeder, bir rüya günlüğü tutar ve Ay Madalyonunu açarsın. Bu politika, hangi verinin cihazında
@@ -70,8 +70,12 @@ uygulamanın davranışı çelişiyorsa bunu bir hata olarak kabul et ve
   <li><strong>Ay Madalyonu için de hesap gerekir ve yazdıklarından hiçbiri gönderilmez.</strong>
       Ay Madalyonunu açmak Luna'dan bir cümle ister; istek tarihi, uygulama dilini, günlük mesajı mı yoksa ek
       mesajı mı açtığını ve seçtiğin Luna karakterini taşır. Yazdığın hiçbir şeyi ve burcunu içermez.</li>
-  <li>Uygulama etkinliğini reklam ölçümü için Meta veya TikTok'a göndermeyiz. Özel yazılarını
-      reklam ya da profilleme için kullanmayız.</li>
+  <li><strong>Reklam ölçümü yalnızca iznin varsa.</strong> İzin verirsen (iOS'ta Apple'ın izleme
+      penceresi, Android'de tek seferlik bir pencere), uygulama ne zaman yüklendiğini veya
+      açıldığını ve Manifestle Plus satın aldığını Meta ve TikTok'a bildirir; böylece hangi
+      reklamların işe yaradığını görebiliriz. Neyin gönderildiğini ve iznini nasıl geri alacağını
+      <a href="#advertising">6. bölüm</a> anlatır. Özel yazılarını reklam ya da profilleme için
+      kullanmayız.</li>
   <li>Hesabını ve yolculuk verilerini uygulama içinden silebilirsin. Kalan sınırlı güvenlik,
       içerik bildirimi ve cihaz kayıtları <a href="#account-deletion">9. bölümde</a> açıklanır.</li>
 </ul>
@@ -107,6 +111,12 @@ koşullarına tabidir; biz onları okuyamayız ve bize bir kopyası gönderilmez
 <p>Android yedeklemesi kapalı olduğu için misafir yolculuğu, uygulama kaldırıldıktan veya telefon
 kaybolduktan ya da değiştirildikten sonra geri getirilemez. Bağlı bir hesap, 4. bölümde açıklanan
 Yerel Yolculuk verilerini Manifestle bulutundan geri yükleyebilir.</p>
+<p><strong>Apple Sağlık</strong> (<em>yalnızca iOS, isteğe bağlı, varsayılan olarak kapalı</em>).
+Ayarlar'da Ruh Hâllerini Apple Sağlık'a Kaydet seçeneğini açarsan, her buluşmandaki ruh hâlin
+cihazında Apple Sağlık'a bir Ruh Hâli (State of Mind) kaydı olarak yazılır. Yalnızca ruh hâli
+yazılır, notların asla yazılmaz. Manifestle Apple Sağlık'tan hiçbir şey okumaz ve Sağlık verilerini
+sunucularımıza ya da başka birine göndermez. Kayıtlar Apple Sağlık'ta kalır; onları orada görebilir
+veya silebilirsin. Seçeneği kapatmak yeni kayıtları durdurur.</p>
 
 <h2>3. Luna'nın yapay zekâ cevapları</h2>
 <p>Luna'nın cevapları <strong>OpenAI API</strong> kullanılarak yazılır. Manifestle, Luna ilk kez cevap
@@ -241,9 +251,37 @@ kaldırmak ve hesapları kapatmak dahil olmak üzere gereğini yaparız.</p>
 
 <p>Bir Luna yanıtını mesaj menüsünden veya okumanın seçenekler menüsünden bildirebilirsin. Bildirimi Gönder seçeneğini kullandığında seçilen yanıtı (en fazla 20.000 karakter), geldiği özelliği, hesap veya misafir kimliğini, bildirim nedenini, isteğe bağlı açıklamanı, platformu ve bildirim zamanını toplarız. Bildirimi Firebase’de saklar, seçilen yanıtı ve açıklamanı inceleme için destek posta kutumuza iletiriz. Diğer mesajlarını veya özgün rüyanı otomatik olarak eklemeyiz; bildirim yeni bir OpenAI isteği göndermez ve yapay zekâ hakkını tüketmez.</p>
 
-<h2>6. Reklam ve profilleme</h2>
-<p>Güncel iOS ve Android derlemeleri Meta veya TikTok SDK'larını içermez ve bu platformlara
-reklam ölçüm olayları göndermez.</p>
+<h2 id="advertising">6. Reklam ve profilleme</h2>
+<p>Manifestle, hangi reklamlarımızın insanları Manifestle'yi yüklemeye ve Manifestle Plus satın
+almaya yönelttiğini ölçmek için Meta ve TikTok yazılım geliştirme kitlerini (SDK) kullanır. Bunlar
+yalnızca iznin varsa çalışır:</p>
+<ul>
+  <li><strong>iOS:</strong> yalnızca Apple'ın Uygulama İzleme Şeffaflığı penceresinde İzin Ver'i
+      seçersen. Bu tercihi istediğin zaman iOS Ayarlar → Gizlilik ve Güvenlik → İzleme bölümünden
+      değiştirebilirsin; uygulama her açılışta bunu kontrol eder.</li>
+  <li><strong>Android:</strong> yalnızca Manifestle'nin tek seferlik "Reklamlarımızı ölçmemize
+      yardım et" penceresinde İzin ver'i seçersen. İznini geri almak için uygulamanın verilerini
+      temizle (veya uygulamayı yeniden yükle) ve İzin verme'yi seç ya da Ayarlar'dan hesabını sil.
+      <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a> adresine yazarsan bu
+      adımlarda sana yardımcı oluruz; tercih cihazında saklandığı için onu uzaktan değiştiremeyiz.</li>
+</ul>
+<p>İzin verdiğinde uygulama Meta ve TikTok'a şunları gönderir: uygulamanın yüklendiğini veya
+açıldığını; yeni bir Manifestle Plus satın alımında ürünü, fiyatı ve para birimini; ayrıca bu
+SDK'ların her olaya eklediği teknik bilgileri, örneğin cihaz modeli, işletim sistemi ve uygulama
+sürümü, dil, saat dilimi, IP adresi (yaklaşık konum bundan çıkarılabilir) ve uygulama kurulumuna ait
+tanımlayıcılar. iOS'ta TikTok SDK'sı, iOS'un yalnızca İzin Ver'i seçtikten sonra erişime açtığı
+Apple reklam tanımlayıcısını (IDFA) da okuyabilir. Android'de uygulama Google reklam kimliğine
+erişmez. TikTok SDK'sı ayrıca kendi çalışmasıyla ilgili teknik tanılama verileri gönderir.
+Manifestlerini, konuşmalarını, buluşmalarını, ruh hâllerini, rüyalarını, doğum tarihini, adını,
+e-postanı veya hesap kimliğini asla göndermeyiz.</p>
+<p>Meta ve TikTok bu bilgileri reklamlarımızı ilişkilendirmek ve iyileştirmek için ve kendi koşulları
+ile gizlilik politikalarına göre kullanır (<a href="https://www.facebook.com/privacy/policy/">Meta</a>,
+<a href="https://www.tiktok.com/legal/page/global/privacy-policy/tr">TikTok</a>). İznini geri almak
+yeni olayları durdurur; daha önce gönderilmiş olayları geri çağırmaz. Tuttukları veriler hakkında
+doğrudan Meta veya TikTok'a başvurabilirsin.</p>
+<p>iOS'ta izlemeye izin versen de vermesen de uygulama, gizliliği koruyan bir ilişkilendirme sistemi
+olan Apple SKAdNetwork'ü de günceller: Apple, bir reklamın yüklemeye yol açtığını ve kaba bir satın
+alma değerini reklam ağına seni veya cihazını tanımlamadan bildirir.</p>
 <ul>
   <li>Kişisel verileri kiralamayız veya para karşılığında satmayız.</li>
   <li>Özel yazılarını reklam ya da profilleme için kullanmayız.</li>
@@ -262,6 +300,12 @@ reklam ölçüm olayları göndermez.</p>
       ya da hesap kimliğini göndermez. iOS uygulaması Firebase Crashlytics kullanmaz.</li>
   <li><strong>OpenAI API</strong> — 3. bölümde anlatıldığı gibi Luna'nın cevaplarının üretilmesi
       ve Luna'nın Hafızasının güncellenmesi.</li>
+  <li><strong>RevenueCat</strong> — satın alma analitiği. Satın alımlarına ve aboneliklerine ait App
+      Store veya Google Play kayıtlarını (ürün, fiyat, para birimi, mağaza ülkesi, işlem tarihleri ve
+      tanımlayıcıları) anonim bir RevenueCat müşteri kimliğiyle alır. Manifestle hesap kimliğini,
+      adını veya e-postanı almaz. Satın alma ve hak yetkisi App Store ve Google Play'de kalır.</li>
+  <li><strong>Meta Platforms</strong> (Meta SDK) ve <strong>TikTok</strong> (TikTok Business SDK)
+      — <a href="#advertising">6. bölümde</a> anlatıldığı gibi, yalnızca iznin varsa reklam ölçümü.</li>
   <li><strong>Apple</strong> — Apple ile Giriş Yap, bildirim iletimi ve App Store satın
       alımları; yalnızca iOS.</li>
   <li><strong>Google Play</strong> — <em>yalnızca Android</em>. Uygulamanın dağıtımı ve Manifestle
@@ -274,7 +318,8 @@ reklam ölçüm olayları göndermez.</p>
 <p>Manifestle, ilgili veri koruma hukukunda tanındığı ölçüde aşağıdaki hukuki sebeplere dayanır:</p>
 <ul>
   <li>3. bölümdeki verilerin OpenAI'a gönderilmesi ve istediğin yapay zekâ özelliğinin üretilmesi
-      için <strong>açık rıza</strong>.</li>
+      ile Meta ve TikTok tarafından reklam ölçümü (<a href="#advertising">6. bölüm</a>) için
+      <strong>açık rıza</strong>.</li>
   <li>Uygulamayı sunmak, hesap doğrulamak, bulutta tutmayı seçtiğin veriyi eşitlemek ve geri
       yüklemek ve satın alımları işlemek için <strong>sözleşmenin kurulması veya ifası</strong>.</li>
   <li>Ölçülü güvenlik, dolandırıcılık ve kötüye kullanım önleme, günlük hakları uygulama,
@@ -284,7 +329,8 @@ reklam ölçüm olayları göndermez.</p>
   <li>Uygulanabilir hukuk gerektirdiğinde sınırlı bilgileri saklamak veya açıklamak için
       <strong>hukuki yükümlülükler ve bir hakkın tesisi, kullanılması veya korunması</strong>.</li>
 </ul>
-<p>Firebase, OpenAI, Apple ve Google kişisel verileri Türkiye ve Avrupa Ekonomik Alanı dışında
+<p>Firebase, OpenAI, Apple, Google, RevenueCat ve reklam ölçümüne izin verirsen Meta ve TikTok,
+kişisel verileri Türkiye ve Avrupa Ekonomik Alanı dışında
 olmak üzere yaşadığın ülkenin dışında işleyebilir. OpenAI, API müşteri verilerini kendi Veri İşleme
 Eki kapsamında bizim adımıza işler. Avrupa veya Birleşik Krallık veri koruma hukukuna tabi
 aktarımlarda bu ek, uygulanabilir Standart Sözleşme Maddelerini veya Birleşik Krallık ekini içerir.

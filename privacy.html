@@ -34,7 +34,7 @@
 <body>
 
 <h1>Manifestle Privacy Policy</h1>
-<p class="updated">Last updated: 4 November 2026</p>
+<p class="updated">Last updated: 16 November 2026</p>
 
 <p>Manifestle is a private ritual app: you seal intentions, talk with Luna, record daily
 check-ins, keep a dream journal, and open your Moon Locket. This policy describes exactly what
@@ -70,7 +70,10 @@ data described in this policy. You can contact the controller at
       Opening your locket asks Luna for a message; the request carries the date, your app language, whether
       you are opening the daily or bonus message, and the Luna persona you chose. It does not include anything you
       wrote, and it does not include your zodiac sign.</li>
-  <li>We do not send app activity to Meta or TikTok for advertising measurement. We do not use
+  <li><strong>Advertising measurement only with your permission.</strong> If you allow it (Apple's
+      tracking prompt on iOS, a one-time prompt on Android), the app tells Meta and TikTok when it
+      is installed or opened and when you buy Manifestle Plus, so we can see which ads work.
+      <a href="#advertising">Section 6</a> explains what is sent and how to withdraw. We do not use
       your private writing for advertising or profiling.</li>
   <li>You can delete your account and its journey data from inside the app. <a href="#account-deletion">Section 9</a> explains
       the limited security, moderation, and device records that remain.</li>
@@ -109,6 +112,12 @@ copy.</p>
 <p>Because Android backup is disabled, a guest journey cannot be recovered after the app is
 uninstalled or the phone is lost or replaced. A linked account can restore the Local Journey data
 described in section 4 from Manifestle's cloud.</p>
+<p><strong>Apple Health</strong> (<em>iOS only, optional, off by default</em>). If you turn on
+Save Moods to Apple Health in Settings, the mood from each check-in is written to Apple Health on
+your device as a State of Mind entry. Only the mood is written, never your notes. Manifestle does
+not read anything from Apple Health and does not send Health data to our servers or anyone else.
+Entries stay in Apple Health, where you can view or delete them; turning the setting off stops new
+entries.</p>
 
 <h2>3. Luna's AI replies</h2>
 <p>Luna's replies are written using the <strong>OpenAI API</strong>. Manifestle asks for your explicit
@@ -242,9 +251,35 @@ removing content and terminating accounts.</p>
 
 <p>You can report a Luna response from its message menu or a reading’s options menu. When you choose Send Report, we collect the selected response (up to 20,000 characters), the feature it came from, your account or guest identifier, report reason, optional explanation, platform, and report time. We store the report in Firebase and send its selected response and explanation to our support mailbox for moderation. We do not automatically attach your other messages or original dream, and reporting does not send a new request to OpenAI or spend an AI allowance.</p>
 
-<h2>6. Advertising and profiling</h2>
-<p>The current iOS and Android builds do not include Meta or TikTok SDKs and do not send
-advertising-measurement events to these platforms.</p>
+<h2 id="advertising">6. Advertising and profiling</h2>
+<p>Manifestle uses the Meta and TikTok software development kits (SDKs) to measure which of our
+ads lead people to install Manifestle and buy Manifestle Plus. They run only with your permission:</p>
+<ul>
+  <li><strong>iOS:</strong> only if you choose Allow in Apple's App Tracking Transparency prompt.
+      You can change this at any time in iOS Settings → Privacy &amp; Security → Tracking; the app
+      checks it every time it opens.</li>
+  <li><strong>Android:</strong> only if you choose Allow on Manifestle's one-time "Help us measure
+      our ads" prompt. To withdraw, clear the app's data (or reinstall it) and choose Don't Allow,
+      or delete your account in Settings. If you write to
+      <a href="mailto:privacy@tortubuild.com">privacy@tortubuild.com</a>, we will walk you through
+      these steps; the choice is stored on your device, so we cannot change it remotely.</li>
+</ul>
+<p>When you allow it, the app sends Meta and TikTok: that the app was installed or opened; for a
+new Manifestle Plus purchase, the product, price, and currency; and the technical information these
+SDKs attach to every event, such as device model, operating system and app version, language, time
+zone, IP address (from which an approximate location can be derived), and identifiers for the app
+installation. On iOS, the TikTok SDK may also read Apple's advertising identifier (IDFA), which iOS
+makes available only after you choose Allow. On Android, the app does not access the Google
+advertising ID. The TikTok SDK also sends technical diagnostics about its own operation. We never
+send your manifests, conversations, check-ins, moods, dreams, birth date, name, email, or account id.</p>
+<p>Meta and TikTok use this information to attribute and optimise our ads and under their own terms
+and privacy policies (<a href="https://www.facebook.com/privacy/policy/">Meta</a>,
+<a href="https://www.tiktok.com/legal/page/global/privacy-policy/en">TikTok</a>). Withdrawing stops
+new events; it does not recall events already sent. You can ask Meta or TikTok directly about data
+they hold.</p>
+<p>On iOS, whether or not you allow tracking, the app also updates Apple's SKAdNetwork, a
+privacy-preserving attribution system: Apple tells the ad network that an ad led to an install and
+gives a coarse purchase value, without identifying you or your device.</p>
 <ul>
   <li>We do not rent personal data or sell it for money.</li>
   <li>We do not use your private writing for advertising or profiling.</li>
@@ -262,6 +297,14 @@ advertising-measurement events to these platforms.</p>
       messages, check-ins, dreams, birth date, name, email, or account id. The iOS app does not use
       Firebase Crashlytics.</li>
   <li><strong>OpenAI API</strong> — generating Luna's replies and updating Luna Memory, as described in section 3.</li>
+  <li><strong>RevenueCat</strong> — purchase analytics. It receives the App Store or Google Play
+      records of your purchases and subscriptions (product, price, currency, store country,
+      transaction dates and identifiers) with an anonymous RevenueCat customer ID. It does not
+      receive your Manifestle account id, name, or email. The App Store and Google Play remain the
+      purchase and entitlement authority.</li>
+  <li><strong>Meta Platforms</strong> (Meta SDK) and <strong>TikTok</strong> (TikTok Business
+      SDK) — advertising measurement, only with your permission, as described in
+      <a href="#advertising">section 6</a>.</li>
   <li><strong>Apple</strong> — Sign in with Apple, push notification delivery, and App Store
       purchases on iOS.</li>
   <li><strong>Google Play</strong> — <em>Android only</em>. Distribution of the app and processing of
@@ -275,7 +318,8 @@ advertising-measurement events to these platforms.</p>
 <p>Manifestle uses the following legal bases, where the relevant privacy law recognizes them:</p>
 <ul>
   <li><strong>Consent</strong> for sending the section 3 data to OpenAI and generating the AI
-      feature you request.</li>
+      feature you request, and for advertising measurement by Meta and TikTok
+      (<a href="#advertising">section 6</a>).</li>
   <li><strong>Performance of our agreement with you</strong> for providing the app, authenticating
       an account, syncing the cloud data you choose to keep, restoring it, and processing
       purchases.</li>
@@ -285,7 +329,8 @@ advertising-measurement events to these platforms.</p>
   <li><strong>Legal obligations and legal claims</strong> where we must keep or disclose limited
       information under applicable law.</li>
 </ul>
-<p>Firebase, OpenAI, Apple, and Google may process personal data outside your country, including
+<p>Firebase, OpenAI, Apple, Google, RevenueCat, and, if you allow advertising measurement, Meta and
+TikTok may process personal data outside your country, including
 outside Türkiye and the European Economic Area. OpenAI processes API customer data on our behalf
 under its Data Processing Addendum. For transfers covered by European or UK data-protection law,
 that addendum incorporates the applicable Standard Contractual Clauses or UK addendum. Transfers
